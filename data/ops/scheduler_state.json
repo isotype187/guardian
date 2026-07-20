@@ -1,0 +1,51 @@
+﻿{
+    "jobs":  [
+                 {
+                     "name":  "HEALTH_SCAN",
+                     "intervalSeconds":  60,
+                     "enabled":  true,
+                     "description":  "Health, resource, and communication checks",
+                     "lastRun":  "2026-07-19T13:31:07.8004691-05:00",
+                     "lastStatus":  "ok",
+                     "lastError":  ""
+                 },
+                 {
+                     "name":  "STORAGE_SCAN",
+                     "intervalSeconds":  300,
+                     "enabled":  true,
+                     "description":  "Entropy analysis, growth tracking, classification",
+                     "lastRun":  "2026-07-19T13:31:08.0838289-05:00",
+                     "lastStatus":  "ok",
+                     "lastError":  ""
+                 },
+                 {
+                     "name":  "EVENT_REVIEW",
+                     "intervalSeconds":  120,
+                     "enabled":  true,
+                     "description":  "Event analysis, severity review, pattern detection",
+                     "lastRun":  "2026-07-19T13:31:19.0026018-05:00",
+                     "lastStatus":  "ok",
+                     "lastError":  ""
+                 },
+                 {
+                     "name":  "MEMORY_MAINTENANCE",
+                     "intervalSeconds":  600,
+                     "enabled":  true,
+                     "description":  "Memory cleanup, compression, archival",
+                     "lastRun":  "2026-07-19T13:31:19.0524938-05:00",
+                     "lastStatus":  "ok",
+                     "lastError":  ""
+                 },
+                 {
+                     "name":  "CHECKPOINT_VALIDATION",
+                     "intervalSeconds":  900,
+                     "enabled":  true,
+                     "description":  "Checkpoint verification, recovery readiness",
+                     "lastRun":  "2026-07-19T13:31:19.1585811-05:00",
+                     "lastStatus":  "ok",
+                     "lastError":  ""
+                 }
+             ],
+    "lastCycle":  "2026-07-19T13:31:07.7610706-05:00",
+    "created":  "2026-07-19T13:31:07.7221851-05:00"
+}

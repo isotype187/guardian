@@ -1,0 +1,24 @@
+﻿{
+    "version":  "1.0.0",
+    "schedulerIntervals":  {
+                               "HEALTH_SCAN":  60,
+                               "STORAGE_SCAN":  300,
+                               "EVENT_REVIEW":  120,
+                               "MEMORY_MAINTENANCE":  600,
+                               "CHECKPOINT_VALIDATION":  900
+                           },
+    "monitoringLevel":  "standard",
+    "retentionRules":  {
+                           "heartbeatDays":  30,
+                           "acksDays":  30,
+                           "eventsMax":  1000
+                       },
+    "communication":  {
+                          "bridgeEnabled":  true,
+                          "requirePermissionForHighRisk":  true
+                      },
+    "logging":  {
+                    "audit":  true,
+                    "level":  "info"
+                }
+}

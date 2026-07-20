@@ -1,0 +1,12 @@
+﻿{
+    "component":  "Recovery Manager",
+    "version":  "1.9.0",
+    "rollback":  "enabled",
+    "created":  {
+                    "value":  "\/Date(1784029621842)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:47:01 AM"
+                },
+    "checkpoint_integration":  "enabled",
+    "status":  "active"
+}

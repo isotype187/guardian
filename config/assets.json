@@ -1,0 +1,43 @@
+﻿{
+    "system": "Nexus98 Guardian",
+    "version": "3.0.0",
+    "purpose": "AI workstation protection and recovery",
+
+    "assets": [
+        {
+            "name": "AI_Model_Hub",
+            "priority": "critical",
+            "snapshot": true
+        },
+        {
+            "name": "Ollama",
+            "priority": "critical",
+            "snapshot": true
+        },
+        {
+            "name": "Continue",
+            "priority": "critical",
+            "snapshot": true
+        },
+        {
+            "name": "VS_Code",
+            "priority": "important",
+            "snapshot": true
+        },
+        {
+            "name": "Python",
+            "priority": "critical",
+            "snapshot": true
+        },
+        {
+            "name": "SSH",
+            "priority": "important",
+            "snapshot": true
+        },
+        {
+            "name": "Git",
+            "priority": "important",
+            "snapshot": true
+        }
+    ]
+}

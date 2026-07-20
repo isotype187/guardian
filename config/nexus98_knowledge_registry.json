@@ -1,0 +1,22 @@
+﻿{
+    "modules":  [
+                    "Foundation",
+                    "Command Router",
+                    "State Manager",
+                    "Supervisor",
+                    "Event Bus",
+                    "Task Scheduler",
+                    "Resource Manager",
+                    "Policy Engine",
+                    "Execution Engine",
+                    "Recovery Manager"
+                ],
+    "status":  "active",
+    "created":  {
+                    "value":  "\/Date(1784029866243)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:51:06 AM"
+                },
+    "component":  "Knowledge Manager",
+    "version":  "2.0.0"
+}

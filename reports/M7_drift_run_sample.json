@@ -1,0 +1,617 @@
+﻿[
+    {
+        "action":  "drift_guard_run",
+        "previousState":  null,
+        "timestamp":  "2026-07-19T11:22:12.5899291-05:00",
+        "actor":  "guardian",
+        "newState":  "STABLE",
+        "reason":  "periodic architecture + storage governance scan",
+        "validation":  "completed"
+    },
+    {
+        "timestamp":  "2026-07-19T11:22:12.5869230-05:00",
+        "baselineCaptured":  "2026-07-19T11:22:12.1959646-05:00",
+        "driftCount":  0,
+        "drift":  [
+
+                  ],
+        "storageFindingsCount":  54,
+        "storageFindings":  [
+                                {
+                                    "rule":  "UNCONTROLLED_SNAPSHOTS",
+                                    "detail":  "3411 snapshot files",
+                                    "severity":  "critical",
+                                    "lifecycle":  {
+                                                      "category":  "TEMPORARY",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "guardian",
+                                                      "retentionPolicy":  "rotate/archive"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_084855_2838",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_084955_3709",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_085108_664",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_091038_5659",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_092507_3984",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_092605_3793",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_094159_6697",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_094844_387",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_094938_6367",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100150_7655",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100306_1792",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100352_799",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100629_2552",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100629_4172",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100714_4878",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100751_6290",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100809_8463",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100839_1519",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_100857_3864",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101115_5401",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101132_7058",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101216_4575",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101234_9571",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101446_2620",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\archive\\CK_20260719_101504_219",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_092650_3138",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_095018_341",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_100428_4090",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_100922_138",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111613_5166",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111651_8920",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111714_5134",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111728_5606",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111741_4503",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111833_1918",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\emergency\\CK_20260719_111907_5234",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_090859_2243",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_092650_7895",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_095018_1326",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_100428_8292",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_100922_1839",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\milestones\\CK_20260719_112211_6181",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_110147_5044",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_110205_153",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111613_2507",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111650_7826",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111714_562",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111728_9597",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111741_192",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111833_2949",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111846_2440",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111901_5776",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                },
+                                {
+                                    "rule":  "NESTED_PROJECT_COPY",
+                                    "detail":  "D:\\Nexus98_Guardian\\data\\checkpoints\\rolling\\CK_20260719_111907_7106",
+                                    "severity":  "warning",
+                                    "lifecycle":  {
+                                                      "category":  "UNKNOWN",
+                                                      "cleanupStatus":  "required",
+                                                      "owner":  "unknown",
+                                                      "retentionPolicy":  "review"
+                                                  }
+                                }
+                            ],
+        "verdict":  "STABLE"
+    }
+]

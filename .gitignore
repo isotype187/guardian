@@ -1,0 +1,63 @@
+﻿# Nexus98 Guardian - git ignore rules
+# Exclude generated/volatile artifacts; keep all source and docs tracked.
+
+# Python / virtual environments
+.venv/
+__pycache__/
+*.pyc
+
+# Logs (audit + execution)
+*.log
+logs/
+
+# Temporary files
+temp/
+tmp/
+*.tmp
+*~
+
+# Generated reports (raw outputs) - keep structured docs in docs/
+reports/*.txt
+reports/raw/
+
+# Snapshot archive (large recovery points, managed separately)
+snapshots/
+
+# Local checkpoint working data (governed by Guardian, not git)
+data/checkpoints/
+data/latest_recovery.json
+data/events/
+data/storage_baseline.json
+data/agents/
+data/resource_baseline.json
+data/security_baseline.json
+data/comms/
+data/memory/
+data/remediation/
+
+# Relocated git metadata lives in vcs/
+
+# M8 governed message bus (generated runtime artifacts)
+communication/*
+!communication/PURPOSE.md
+
+
+# Protected/broken root .git (immutable in this sandbox)
+.git/
+
+# IDE / OS artifacts
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+
+# Node / build outputs
+node_modules/
+dist/
+build/
+
+
+
+
+
+

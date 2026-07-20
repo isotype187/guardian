@@ -1,0 +1,11 @@
+﻿{
+    "status":  "active",
+    "created":  {
+                    "value":  "\/Date(1784029221503)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:40:21 AM"
+                },
+    "component":  "Policy Engine",
+    "version":  "1.7.0",
+    "rules":  "enabled"
+}
