@@ -33,7 +33,7 @@ function New-GuardianEvent {
 
 function Write-GuardianEvent {
     param(
-        [Parameter(Mandatory=$true)][object]$Event
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)][object]$Event
     )
     $store = Join-Path $GuardianEnv.Data 'events'
     if (-not (Test-Path $store)) { New-Item -ItemType Directory -Force -Path $store | Out-Null }
@@ -92,5 +92,6 @@ function Invoke-GuardianEventRotation {
     $recent | ForEach-Object { $_ | ConvertTo-Json -Depth 10 -Compress } | Set-Content -Path $file -Encoding UTF8
     return @{ rotated=$old.Count; retained=$recent.Count }
 }
+
 
 

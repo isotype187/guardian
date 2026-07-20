@@ -1,6 +1,6 @@
 ﻿{
     "version":  "1.0.0",
-    "captured":  "2026-07-19T12:04:54.6900402-05:00",
+    "captured":  "2026-07-20T06:43:56.2307425-05:00",
     "guardianVersion":  "0.1.0",
     "approvedDirectories":  [
                                 {
@@ -267,7 +267,7 @@
                                 "lifecycle":  "permanent",
                                 "allowedModifications":  "guardian edits under checkpoint",
                                 "status":  "active",
-                                "hash":  "6A2E48672FF16604AE17C5C5197C00B274A8D9C97E6057AD72867DA0A56DD1B9"
+                                "hash":  "E40363E688CDB92D29B405CC766F5166B0DB095FCCC5AD1894717778846C0946"
                             },
                             {
                                 "name":  "Guardian_Explanation.ps1",
@@ -327,7 +327,7 @@
                                 "lifecycle":  "permanent",
                                 "allowedModifications":  "guardian edits under checkpoint",
                                 "status":  "active",
-                                "hash":  "04B0FAA74BD08740D1692D4BEFE0DE6AC9F0B43BC874A9383E3ABA5E776C0A4A"
+                                "hash":  "E65FA62B0549BABC113A50C878785E31AD9C0ECE8B9489C6D70808237C615E42"
                             },
                             {
                                 "name":  "Guardian_Memory.ps1",
@@ -348,6 +348,16 @@
                                 "allowedModifications":  "guardian edits under checkpoint",
                                 "status":  "active",
                                 "hash":  "019EAE6965E0F6842A5E0F72289681C832D462943814FB5E828A4EF59AC56EC3"
+                            },
+                            {
+                                "name":  "Guardian_Operations.ps1",
+                                "directory":  "core",
+                                "owner":  "guardian",
+                                "purpose":  "module: Guardian_Operations.ps1",
+                                "lifecycle":  "permanent",
+                                "allowedModifications":  "guardian edits under checkpoint",
+                                "status":  "active",
+                                "hash":  "AA156D783C42EEA186CF82189E87F0AEDC63D3D1D2DD543A78FC9FF6F4DDCEC4"
                             },
                             {
                                 "name":  "Guardian_Patterns.ps1",
@@ -615,6 +625,13 @@
                                       "purpose":  "data location: memory",
                                       "lifecycle":  "managed",
                                       "allowedModifications":  "guardian runtime only"
+                                  },
+                                  {
+                                      "path":  "data/ops",
+                                      "owner":  "guardian",
+                                      "purpose":  "data location: ops",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian runtime only"
                                   }
                               ],
     "approvedConfigFiles":  [
@@ -625,6 +642,14 @@
                                     "lifecycle":  "managed",
                                     "allowedModifications":  "guardian edits under checkpoint",
                                     "hash":  "9B11B1700491BD20CCAED451A712F1CA1F9E5BFB82447B0BCCFA355FA7FD082D"
+                                },
+                                {
+                                    "name":  "guardian_runtime_config.json",
+                                    "owner":  "guardian",
+                                    "purpose":  "config: guardian_runtime_config.json",
+                                    "lifecycle":  "managed",
+                                    "allowedModifications":  "guardian edits under checkpoint",
+                                    "hash":  "47D91CC59C8F9D81190EABD4FF836DA75675440C703A310BCF6F9D671875258C"
                                 },
                                 {
                                     "name":  "nexus98_automation_state.json",
@@ -980,13 +1005,6 @@
                                       "allowedModifications":  "guardian managed"
                                   },
                                   {
-                                      "name":  "fix_loader.ps1",
-                                      "owner":  "guardian",
-                                      "purpose":  "top-level artifact: fix_loader.ps1",
-                                      "lifecycle":  "managed",
-                                      "allowedModifications":  "guardian managed"
-                                  },
-                                  {
                                       "name":  "HANDOFF_PLAN.md",
                                       "owner":  "guardian",
                                       "purpose":  "top-level artifact: HANDOFF_PLAN.md",
@@ -994,9 +1012,44 @@
                                       "allowedModifications":  "guardian managed"
                                   },
                                   {
-                                      "name":  "m9_ck.ps1",
+                                      "name":  "m10_cyc.ps1",
                                       "owner":  "guardian",
-                                      "purpose":  "top-level artifact: m9_ck.ps1",
+                                      "purpose":  "top-level artifact: m10_cyc.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "m10_e2e.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: m10_e2e.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "m10_hs.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: m10_hs.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "m10_sched.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: m10_sched.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "m10_smoke.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: m10_smoke.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "m10_ss.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: m10_ss.ps1",
                                       "lifecycle":  "managed",
                                       "allowedModifications":  "guardian managed"
                                   },
@@ -1018,20 +1071,6 @@
                                       "name":  "README.md",
                                       "owner":  "guardian",
                                       "purpose":  "top-level artifact: README.md",
-                                      "lifecycle":  "managed",
-                                      "allowedModifications":  "guardian managed"
-                                  },
-                                  {
-                                      "name":  "regen_base.ps1",
-                                      "owner":  "guardian",
-                                      "purpose":  "top-level artifact: regen_base.ps1",
-                                      "lifecycle":  "managed",
-                                      "allowedModifications":  "guardian managed"
-                                  },
-                                  {
-                                      "name":  "run_all_m9.ps1",
-                                      "owner":  "guardian",
-                                      "purpose":  "top-level artifact: run_all_m9.ps1",
                                       "lifecycle":  "managed",
                                       "allowedModifications":  "guardian managed"
                                   }
