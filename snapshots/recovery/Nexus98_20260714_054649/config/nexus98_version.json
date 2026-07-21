@@ -1,0 +1,21 @@
+﻿{
+    "verified":  {
+                     "value":  "\/Date(1784022987223)\/",
+                     "DisplayHint":  2,
+                     "DateTime":  "Tuesday, July 14, 2026 4:56:27 AM"
+                 },
+    "status":  "Operational",
+    "toolkit":  "Nexus98 Toolkit",
+    "components":  {
+                       "python_manager":  "v1",
+                       "command_center":  "v4",
+                       "execution_logger":  "v1",
+                       "audit_identity":  "v1",
+                       "continue_manager":  "yaml",
+                       "state_manager":  "v1",
+                       "ollama_controller":  "v1",
+                       "module_registry":  "v1",
+                       "upgrade_manager":  "v1"
+                   },
+    "version":  "0.1"
+}

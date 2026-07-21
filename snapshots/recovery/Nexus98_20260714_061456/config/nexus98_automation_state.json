@@ -1,0 +1,11 @@
+﻿{
+    "status":  "installed",
+    "queue":  "ready",
+    "component":  "Orchestrator Automation",
+    "version":  "0.5.0",
+    "created":  {
+                    "value":  "\/Date(1784026500010)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 5:55:00 AM"
+                }
+}

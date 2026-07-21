@@ -1,0 +1,24 @@
+﻿{
+    "timestamp":  "07/14/2026 03:24:23",
+    "installed":  true,
+    "process":  true,
+    "api":  true,
+    "models":  [
+                   "nomic-embed-text:latest",
+                   "qwen2.5-coder:1.5b-base",
+                   "llama3.2:3b",
+                   "qwen3-coder:latest",
+                   "deepseek-r1:32b",
+                   "qwen3:30b",
+                   "qwen3:14b",
+                   "qwen3-coder:30b",
+                   "qwen2.5-coder:14b",
+                   "llava:latest",
+                   "deepseek-coder:latest",
+                   "mistral:latest",
+                   "llama3.2:latest",
+                   "codellama:latest",
+                   "phi3:latest",
+                   "llama3.1:latest"
+               ]
+}

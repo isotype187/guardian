@@ -1,0 +1,23 @@
+﻿{
+    "permissions":  [
+
+                    ],
+    "registered":  "2026-07-19T10:00:39.0189109-05:00",
+    "capabilities":  [
+                         "plan",
+                         "execute"
+                     ],
+    "purpose":  "orchestration",
+    "health_state":  "active",
+    "activity":  [
+                     {
+                         "time":  "2026-07-19T10:00:39.0513716-05:00",
+                         "note":  "heartbeat"
+                     }
+                 ],
+    "limitations":  [
+
+                    ],
+    "agent_id":  "agent-alpha",
+    "last_seen":  "2026-07-19T10:00:39.0497594-05:00"
+}

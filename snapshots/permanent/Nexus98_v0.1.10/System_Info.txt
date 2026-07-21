@@ -1,0 +1,7 @@
+
+WindowsProductName WindowsVersion OsBuildNumber
+------------------ -------------- -------------
+Windows 10 Home    2009           26200        
+
+
+

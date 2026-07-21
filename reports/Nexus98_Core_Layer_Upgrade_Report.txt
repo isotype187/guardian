@@ -1,0 +1,13 @@
+=================================
+Nexus98 Core Layer Upgrade
+=================================
+
+Version: 0.2.0
+Status: VERIFIED
+
+Created:
+Nexus98_Core.ps1
+Nexus98_Logger.ps1
+Nexus98_State.ps1
+Nexus98_Report.ps1
+Nexus98_Telemetry.ps1

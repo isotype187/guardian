@@ -1,0 +1,18 @@
+
+Name           Used (GB)     Free (GB) Provider      Root                                                                                                                     CurrentLocation
+----           ---------     --------- --------      ----                                                                                                                     ---------------
+Alias                                  Alias                                                                                                                                                 
+C                 188.83         48.41 FileSystem    C:\                                                                                                                                     
+Cert                                   Certificate   \                                                                                                                                       
+D                 183.48       1664.79 FileSystem    D:\                                                                                                                      Nexus98_Toolkit
+E                  13.00          1.75 FileSystem    E:\                                                                                                                                     
+Env                                    Environment                                                                                                                                           
+F                                      FileSystem    F:\                                                                                                                                     
+Function                               Function                                                                                                                                              
+HKCU                                   Registry      HKEY_CURRENT_USER                                                                                                                       
+HKLM                                   Registry      HKEY_LOCAL_MACHINE                                                                                                                      
+Variable                               Variable                                                                                                                                              
+WSMan                                  WSMan                                                                                                                                                 
+
+
+

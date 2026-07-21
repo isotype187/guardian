@@ -1,0 +1,11 @@
+﻿{
+    "status":  "active",
+    "queue":  "enabled",
+    "component":  "Task Scheduler",
+    "version":  "1.5.0",
+    "created":  {
+                    "value":  "\/Date(1784028839850)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:33:59 AM"
+                }
+}

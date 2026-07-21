@@ -1,0 +1,80 @@
+Nexus98 Bootstrap
+Date: 07/14/2026 02:28:07
+Computer: DESKTOP-DVHIC6M
+
+==============================
+Project
+==============================
+[OK]   AI_Model_Hub Exists
+
+==============================
+Python
+==============================
+Python 3.11.15
+
+[OK]   Python Available
+[OK]   Virtual Environment Exists
+
+==============================
+Ollama
+==============================
+[OK]   Ollama Running
+[OK]   Ollama API Online
+NAME                       ID              SIZE      MODIFIED          
+nomic-embed-text:latest    0a109f422b47    274 MB    About an hour ago    
+qwen2.5-coder:1.5b-base    02e0f2817a89    986 MB    About an hour ago    
+llama3.2:3b                a80c4f17acd5    2.0 GB    3 days ago           
+qwen3-coder:latest         06c1097efce0    18 GB     6 days ago           
+deepseek-r1:32b            edba8017331d    19 GB     6 days ago           
+qwen3:30b                  ad815644918f    18 GB     6 days ago           
+qwen3:14b                  bdbd181c33f2    9.3 GB    6 days ago           
+qwen3-coder:30b            06c1097efce0    18 GB     6 days ago           
+qwen2.5-coder:14b          9ec8897f747e    9.0 GB    6 days ago           
+llava:latest               8dd30f6b0cb1    4.7 GB    8 days ago           
+deepseek-coder:latest      3ddd2d3fc8d2    776 MB    8 days ago           
+mistral:latest             6577803aa9a0    4.4 GB    8 days ago           
+llama3.2:latest            a80c4f17acd5    2.0 GB    8 days ago           
+codellama:latest           8fdf8f752f6e    3.8 GB    9 days ago           
+phi3:latest                4f2222927938    2.2 GB    9 days ago           
+llama3.1:latest            46e0c10c039e    4.9 GB    9 days ago           
+
+
+==============================
+VS Code
+==============================
+1.128.0
+fc3def6774c76082adf699d366f31a557ce5573f
+x64
+
+[OK]   VS Code Installed
+
+==============================
+Continue
+==============================
+[OK]   Continue Folder Exists
+[FAIL] Continue Config Exists
+
+==============================
+SSH
+==============================
+[OK]   SSH Server Installed
+
+==============================
+Tailscale
+==============================
+100.81.242.65  server-desktop  isotype87@  windows  -  
+100.109.107.1  client-laptop   isotype87@  windows  -  
+
+[OK]   Tailscale Available
+
+==============================
+Models
+==============================
+[OK]   Model Directory Exists
+
+==============================
+Toolkit
+==============================
+[OK]   Toolkit Exists
+
+Bootstrap complete.

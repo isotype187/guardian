@@ -1,0 +1,11 @@
+﻿{
+    "monitoring":  "enabled",
+    "status":  "active",
+    "created":  {
+                    "value":  "\/Date(1784028056720)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:20:56 AM"
+                },
+    "component":  "Supervisor Layer",
+    "version":  "1.3.0"
+}

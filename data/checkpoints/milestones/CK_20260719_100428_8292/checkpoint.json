@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_100428_8292",
+    "parent":  "CK_20260719_100428_4090",
+    "guardianVersion":  "0.1.0",
+    "creator":  "m4",
+    "created":  "2026-07-19T10:04:28.4766710-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M4_RESOURCE_AGENT_SECURITY",
+    "sizeBytes":  0
+}

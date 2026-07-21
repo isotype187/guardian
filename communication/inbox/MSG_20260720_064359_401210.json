@@ -1,0 +1,23 @@
+﻿{
+    "message_id":  "MSG_20260720_064359_401210",
+    "correlation_id":  "COR_20260720_064359_521247",
+    "timestamp":  "2026-07-20T06:43:59.7368166-05:00",
+    "sender":  "Nexus98",
+    "receiver":  "Guardian",
+    "message_type":  "ANALYSIS_REQUEST",
+    "risk_level":  "low",
+    "permission_required":  false,
+    "authorization_status":  "NONE",
+    "checkpoint_reference":  "",
+    "content":  {
+                    "scope":  "",
+                    "analysisKind":  "storage"
+                },
+    "metadata":  {
+
+                 },
+    "status":  "ACCEPTED",
+    "attempt_count":  0,
+    "created_time":  "2026-07-20T06:43:59.7368166-05:00",
+    "updated_time":  "2026-07-20T06:43:59.7428216-05:00"
+}

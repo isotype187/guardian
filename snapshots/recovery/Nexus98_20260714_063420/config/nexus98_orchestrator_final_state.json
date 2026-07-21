@@ -1,0 +1,11 @@
+﻿{
+    "completed":  {
+                      "value":  "\/Date(1784025437976)\/",
+                      "DisplayHint":  2,
+                      "DateTime":  "Tuesday, July 14, 2026 5:37:17 AM"
+                  },
+    "status":  null,
+    "component":  "Orchestrator Core",
+    "version":  "0.3.0",
+    "report":  "\\Nexus98_Orchestrator_Core_Upgrade_Report.txt"
+}

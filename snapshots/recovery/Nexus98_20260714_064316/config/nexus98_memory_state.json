@@ -1,0 +1,11 @@
+﻿{
+    "status":  "installed",
+    "created":  {
+                    "value":  "\/Date(1784026915282)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:01:55 AM"
+                },
+    "component":  "Orchestrator Memory",
+    "version":  "0.6.0",
+    "history":  "enabled"
+}

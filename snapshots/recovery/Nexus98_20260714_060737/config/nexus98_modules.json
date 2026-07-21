@@ -1,0 +1,53 @@
+﻿{
+    "modules":  {
+                    "controllers":  [
+                                        "Ollama_Controller",
+                                        "Continue_Controller",
+                                        "SSH_Controller",
+                                        "VSCode_Controller",
+                                        "Tailscale_Controller",
+                                        "Python_Manager"
+                                    ],
+                    "core":  [
+                                 "Checkpoint_Manager",
+                                 "State_Manager",
+                                 "System_Check",
+                                 "System_Dashboard",
+                                 "Repair_Engine",
+                                 "Execution_Logger",
+                                 "Safety_Module",
+                                 "Core_Loader",
+                                 "Core_Layer",
+                                 "Logger",
+                                 "State",
+                                 "Report",
+                                 "Telemetry",
+                                 "Orchestrator_Core",
+                                 "Intelligence_Engine",
+                                 "Automation_Engine",
+                                 "Memory_Engine",
+                                 "Diagnostics_Engine"
+                             ],
+                    "management":  [
+                                       "Bootstrap",
+                                       "Recovery_Manager",
+                                       "Version_Manager"
+                                   ]
+                },
+    "created":  {
+                    "value":  "\/Date(1784022911294)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 4:55:11 AM"
+                },
+    "toolkit":  "Nexus98 Toolkit",
+    "status":  "registered",
+    "version":  "1.0",
+    "core":  [
+                 "Nexus98_Core",
+                 "Nexus98_Logger",
+                 "Nexus98_State",
+                 "Nexus98_Report",
+                 "Nexus98_Telemetry",
+                 "Orchestrator_Core"
+             ]
+}

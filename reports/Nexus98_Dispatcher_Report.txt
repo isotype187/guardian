@@ -1,0 +1,31 @@
+﻿Nexus98 Dispatcher v1.1
+Generated: 07/14/2026 05:03:14
+
+[OK] Registry loaded
+
+Dispatch Routes:
+
+CATEGORY: controllers
+[READY] Ollama_Controller
+[READY] Continue_Controller
+[READY] SSH_Controller
+[READY] VSCode_Controller
+[READY] Tailscale_Controller
+[READY] Python_Manager
+
+CATEGORY: core
+[READY] Checkpoint_Manager
+[READY] State_Manager
+[READY] System_Check
+[READY] System_Dashboard
+[READY] Repair_Engine
+[READY] Execution_Logger
+[READY] Safety_Module
+[READY] Core_Loader
+
+CATEGORY: management
+[READY] Bootstrap
+[READY] Recovery_Manager
+[READY] Version_Manager
+
+Status: READY

@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_100922_138",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "recovery_engine",
+    "created":  "2026-07-19T10:09:22.0727742-05:00",
+    "fileCount":  0,
+    "tier":  "emergency",
+    "reason":  "M5 checkpoint creation",
+    "sizeBytes":  0
+}

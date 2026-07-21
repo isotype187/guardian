@@ -1,0 +1,49 @@
+﻿Nexus98 Execution Engine v1.2
+Generated: 07/14/2026 05:05:04
+
+[OK] Registry loaded
+
+Execution Mode: DRY RUN
+
+CATEGORY: controllers
+[PLAN] Ollama_Controller
+       D:\Nexus98_Toolkit\scripts\Nexus98_Ollama_Controller.ps1
+[PLAN] Continue_Controller
+       D:\Nexus98_Toolkit\scripts\Nexus98_Continue_Controller.ps1
+[PLAN] SSH_Controller
+       D:\Nexus98_Toolkit\scripts\Nexus98_SSH_Controller.ps1
+[PLAN] VSCode_Controller
+       D:\Nexus98_Toolkit\scripts\Nexus98_VSCode_Controller.ps1
+[PLAN] Tailscale_Controller
+       D:\Nexus98_Toolkit\scripts\Nexus98_Tailscale_Controller.ps1
+[PLAN] Python_Manager
+       D:\Nexus98_Toolkit\scripts\Nexus98_Python_Manager.ps1
+
+CATEGORY: core
+[PLAN] Checkpoint_Manager
+       D:\Nexus98_Toolkit\scripts\Nexus98_Checkpoint_Manager.ps1
+[PLAN] State_Manager
+       D:\Nexus98_Toolkit\scripts\Nexus98_State_Manager.ps1
+[PLAN] System_Check
+       D:\Nexus98_Toolkit\scripts\Nexus98_System_Check.ps1
+[PLAN] System_Dashboard
+       D:\Nexus98_Toolkit\scripts\Nexus98_System_Dashboard.ps1
+[PLAN] Repair_Engine
+       D:\Nexus98_Toolkit\scripts\Nexus98_Repair_Engine.ps1
+[PLAN] Execution_Logger
+       D:\Nexus98_Toolkit\scripts\Nexus98_Execution_Logger.ps1
+[PLAN] Safety_Module
+       D:\Nexus98_Toolkit\scripts\Nexus98_Safety_Module.ps1
+[PLAN] Core_Loader
+       D:\Nexus98_Toolkit\scripts\Nexus98_Core_Loader.ps1
+
+CATEGORY: management
+[PLAN] Bootstrap
+       D:\Nexus98_Toolkit\scripts\Nexus98_Bootstrap.ps1
+[PLAN] Recovery_Manager
+       D:\Nexus98_Toolkit\scripts\Nexus98_Recovery_Manager.ps1
+[PLAN] Version_Manager
+       D:\Nexus98_Toolkit\scripts\Nexus98_Version_Manager.ps1
+
+Execution Status: READY
+Mode: DRY RUN

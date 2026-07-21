@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_100922_1839",
+    "parent":  "CK_20260719_100922_138",
+    "guardianVersion":  "0.1.0",
+    "creator":  "m5",
+    "created":  "2026-07-19T10:09:22.1241279-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M5_CONTROLLED_REMEDIATION_GOVERNANCE",
+    "sizeBytes":  0
+}

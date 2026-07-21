@@ -1,0 +1,58 @@
+﻿{
+    "message_id":  "MSG_20260719_113923_556392",
+    "correlation_id":  "COR_20260719_113923_524673",
+    "timestamp":  "2026-07-19T11:39:23.2442710-05:00",
+    "sender":  "Guardian",
+    "receiver":  "Nexus98",
+    "message_type":  "SYSTEM_HEALTH_REPORT",
+    "risk_level":  "low",
+    "permission_required":  false,
+    "authorization_status":  "NONE",
+    "checkpoint_reference":  "",
+    "content":  {
+                    "timestamp":  "2026-07-19T11:39:23.2432662-05:00",
+                    "storage":  {
+                                    "artifactHygienePct":  50,
+                                    "directoryStructurePct":  85,
+                                    "duplicateRiskPct":  100,
+                                    "source":  "Guardian_StorageIntelligence",
+                                    "growthControlPct":  40,
+                                    "confidence":  0.85,
+                                    "explanation":  "Driven by snapshot accumulation and directory structure.",
+                                    "overallPct":  68.8
+                                },
+                    "memory":  {
+                                   "avgConfidence":  0.5,
+                                   "explanation":  "Operational memory populated.",
+                                   "confidence":  0.7,
+                                   "source":  "Guardian_Memory",
+                                   "total":  82
+                               },
+                    "type":  "GUARDIAN_HEALTH_REPORT",
+                    "health":  {
+                                   "architecturePct":  46.7,
+                                   "source":  "Guardian_Health",
+                                   "overallPct":  44,
+                                   "explanation":  "Composite of subsystem coverage and storage hygiene.",
+                                   "storageHygienePct":  40,
+                                   "confidence":  0.9,
+                                   "runtimePct":  98
+                               },
+                    "checkpoints":  {
+                                        "source":  "Guardian_Checkpoint",
+                                        "rolling":  11,
+                                        "confidence":  1,
+                                        "milestones":  7,
+                                        "explanation":  "Recovery capability available."
+                                    },
+                    "target":  "Nexus98",
+                    "overallPct":  55.1
+                },
+    "metadata":  {
+
+                 },
+    "status":  "ACCEPTED",
+    "attempt_count":  0,
+    "created_time":  "2026-07-19T11:39:23.2442710-05:00",
+    "updated_time":  "2026-07-19T11:39:23.2483045-05:00"
+}

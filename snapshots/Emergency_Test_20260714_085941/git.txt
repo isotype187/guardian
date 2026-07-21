@@ -1,0 +1,89 @@
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   scripts/Nexus98_Bootstrap.ps1
+	modified:   scripts/Nexus98_Repair_Engine.ps1
+	modified:   scripts/Nexus98_System_Check.ps1
+	deleted:    snapshots/recovery/Snapshot_2026-07-14_023132/AI_Model_Hub
+	deleted:    snapshots/recovery/Snapshot_2026-07-14_023132/Disk_Info.txt
+	deleted:    snapshots/recovery/Snapshot_2026-07-14_023132/Hardware.txt
+	deleted:    snapshots/recovery/Snapshot_2026-07-14_023132/System_Info.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Nexus98.ps1
+	config/
+	core/
+	scripts/Nexus98_Checkpoint_Manager.ps1
+	scripts/Nexus98_Command_Router_v1_1_0_Upgrade.ps1
+	scripts/Nexus98_Continue_Controller.ps1
+	scripts/Nexus98_Continue_Manager.ps1
+	scripts/Nexus98_Core_Layer_Integration_Upgrade.ps1
+	scripts/Nexus98_Core_Layer_Upgrade.ps1
+	scripts/Nexus98_Core_Loader.ps1
+	scripts/Nexus98_Event_Bus_v1_4_0_Upgrade.ps1
+	scripts/Nexus98_Execution_Engine.ps1
+	scripts/Nexus98_Execution_Engine_v1_8_0_Upgrade.ps1
+	scripts/Nexus98_Execution_Logger.ps1
+	scripts/Nexus98_Knowledge_Manager_v2_0_0_Upgrade.ps1
+	scripts/Nexus98_Ollama_Controller.ps1
+	scripts/Nexus98_Orchestrator.ps1
+	scripts/Nexus98_Orchestrator_Automation_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Core_Integration_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Diagnostics_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Dispatcher.ps1
+	scripts/Nexus98_Orchestrator_Intelligence_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Memory_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Repair_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_Safety_Upgrade.ps1
+	scripts/Nexus98_Orchestrator_v1_0_0_Upgrade.ps1
+	scripts/Nexus98_Policy_Engine_v1_7_0_Upgrade.ps1
+	scripts/Nexus98_Python_Manager.ps1
+	scripts/Nexus98_Recovery_Manager_v1_9_0_Upgrade.ps1
+	scripts/Nexus98_Resource_Manager_v1_6_0_Upgrade.ps1
+	scripts/Nexus98_SSH_Controller.ps1
+	scripts/Nexus98_State_Manager.ps1
+	scripts/Nexus98_State_Manager_v1_2_0_Upgrade.ps1
+	scripts/Nexus98_Status_Engine_v2_Ollama.ps1
+	scripts/Nexus98_Supervisor_v1_3_0_Upgrade.ps1
+	scripts/Nexus98_System_Dashboard.ps1
+	scripts/Nexus98_Tailscale_Controller.ps1
+	scripts/Nexus98_Task_Scheduler_v1_5_0_Upgrade.ps1
+	scripts/Nexus98_Upgrade_Manager.ps1
+	scripts/Nexus98_VSCode_Controller.ps1
+	scripts/Nexus98_Version_Manager.ps1
+	scripts/archive/
+	snapshots/permanent/
+	snapshots/recovery/Nexus98_20260714_043432/
+	snapshots/recovery/Nexus98_20260714_045313/
+	snapshots/recovery/Nexus98_20260714_045510/
+	snapshots/recovery/Nexus98_20260714_045618/
+	snapshots/recovery/Nexus98_20260714_045815/
+	snapshots/recovery/Nexus98_20260714_050223/
+	snapshots/recovery/Nexus98_20260714_050358/
+	snapshots/recovery/Nexus98_20260714_050543/
+	snapshots/recovery/Nexus98_20260714_051843/
+	snapshots/recovery/Nexus98_20260714_052111/
+	snapshots/recovery/Nexus98_20260714_054649/
+	snapshots/recovery/Nexus98_20260714_055244/
+	snapshots/recovery/Nexus98_20260714_060054/
+	snapshots/recovery/Nexus98_20260714_060239/
+	snapshots/recovery/Nexus98_20260714_060737/
+	snapshots/recovery/Nexus98_20260714_060958/
+	snapshots/recovery/Nexus98_20260714_061223/
+	snapshots/recovery/Nexus98_20260714_061456/
+	snapshots/recovery/Nexus98_20260714_061636/
+	snapshots/recovery/Nexus98_20260714_061852/
+	snapshots/recovery/Nexus98_20260714_062132/
+	snapshots/recovery/Nexus98_20260714_062225/
+	snapshots/recovery/Nexus98_20260714_062630/
+	snapshots/recovery/Nexus98_20260714_063102/
+	snapshots/recovery/Nexus98_20260714_063420/
+	snapshots/recovery/Nexus98_20260714_063707/
+	snapshots/recovery/Nexus98_20260714_064108/
+	snapshots/recovery/Nexus98_20260714_064316/
+	snapshots/recovery/Nexus98_20260714_064735/
+	snapshots/recovery/Nexus98_20260714_065227/
+
+no changes added to commit (use "git add" and/or "git commit -a")

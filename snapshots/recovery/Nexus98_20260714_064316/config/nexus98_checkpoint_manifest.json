@@ -1,0 +1,15 @@
+﻿{
+    "latest_run":  {
+                       "value":  "\/Date(1784029268184)\/",
+                       "DisplayHint":  2,
+                       "DateTime":  "Tuesday, July 14, 2026 6:41:08 AM"
+                   },
+    "excluded":  [
+                     ".venv",
+                     ".git",
+                     "snapshots",
+                     "__pycache__",
+                     "node_modules"
+                 ],
+    "latest_recovery":  "D:\\Nexus98_Toolkit\\snapshots\\recovery\\Nexus98_20260714_064108"
+}

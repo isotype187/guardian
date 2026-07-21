@@ -1,0 +1,17 @@
+﻿{
+    "excluded":  [
+                     ".venv",
+                     ".git",
+                     "snapshots",
+                     "__pycache__",
+                     "node_modules"
+                 ],
+    "created":  {
+                    "value":  "\/Date(1784027696245)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:14:56 AM"
+                },
+    "name":  "Nexus98_20260714_061456",
+    "status":  "verified",
+    "type":  "recovery"
+}

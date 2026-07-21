@@ -1,65 +1,43 @@
-﻿# Nexus98 Guardian - git ignore rules
-# Exclude generated/volatile artifacts; keep all source and docs tracked.
-
-# Python / virtual environments
-.venv/
+﻿# Python
 __pycache__/
 *.pyc
+*.pyo
 
-# Logs (audit + execution)
-*.log
-logs/
+# Virtual environments
+.venv/
+venv/
 
-# Temporary files
-temp/
-tmp/
-*.tmp
-*~
-
-# Generated reports (raw outputs) - keep structured docs in docs/
-reports/*.txt
-reports/raw/
-
-# Snapshot archive (large recovery points, managed separately)
-snapshots/
-
-# Local checkpoint working data (governed by Guardian, not git)
-data/checkpoints/
-data/latest_recovery.json
-data/events/
-data/storage_baseline.json
-data/agents/
-data/resource_baseline.json
-data/security_baseline.json
-data/comms/
-data/memory/
-data/remediation/
-
-# Relocated git metadata lives in vcs/
-
-# M8 governed message bus (generated runtime artifacts)
-communication/*
-!communication/PURPOSE.md
-
-
-# Protected/broken root .git (immutable in this sandbox)
-.git/
-
-# IDE / OS artifacts
+# IDE
 .vscode/
 .idea/
+
+# OS
 Thumbs.db
 Desktop.ini
 
-# Node / build outputs
-node_modules/
-dist/
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Runtime-generated state
+data/ops/runtime_state.json
+data/ops/scheduler_state.json
+data/ops/heartbeat.jsonl
+data/ops/operational_state.json
+data/ops/risk_latest.json
+
+# Secrets
+.env
+*.key
+*.secret
+
+# Build/cache
 build/
+dist/
+*.egg-info/
 
-
-
-
-
-
-
+# External project folder
 vcs/

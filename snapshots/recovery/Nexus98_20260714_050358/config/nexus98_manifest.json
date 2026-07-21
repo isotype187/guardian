@@ -1,0 +1,37 @@
+﻿{
+    "toolkit": {
+        "name": "Nexus98 Toolkit",
+        "version": "1.0",
+        "purpose": "AI infrastructure management and recovery system"
+    },
+
+    "paths": {
+        "toolkit_root": "D:\\Nexus98_Toolkit",
+        "project_root": "D:\\AI_Model_Hub",
+        "model_root": "D:\\AI\\Models",
+        "scripts": "D:\\Nexus98_Toolkit\\scripts",
+        "reports": "D:\\Nexus98_Toolkit\\reports",
+        "logs": "D:\\Nexus98_Toolkit\\logs",
+        "snapshots": "D:\\Nexus98_Toolkit\\snapshots"
+    },
+
+    "machine": {
+        "role": "server",
+        "gpu_enabled": true,
+        "remote_access": true
+    },
+
+    "components": {
+        "ollama": true,
+        "continue": true,
+        "vscode": true,
+        "ssh": true,
+        "tailscale": true
+    },
+
+    "snapshot_policy": {
+        "permanent_checkpoints": true,
+        "temporary_cleanup": true,
+        "emergency_recovery": true
+    }
+}

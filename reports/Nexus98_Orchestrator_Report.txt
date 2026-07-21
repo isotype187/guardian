@@ -1,0 +1,39 @@
+﻿Nexus98 Orchestrator v1
+=======================
+
+Generated: 07/14/2026 05:01:41
+
+[OK] Module registry loaded
+
+Available Modules:
+
+
+controllers:
+[REGISTERED] Ollama_Controller
+[REGISTERED] Continue_Controller
+[REGISTERED] SSH_Controller
+[REGISTERED] VSCode_Controller
+[REGISTERED] Tailscale_Controller
+[REGISTERED] Python_Manager
+
+core:
+[REGISTERED] Checkpoint_Manager
+[REGISTERED] State_Manager
+[REGISTERED] System_Check
+[REGISTERED] System_Dashboard
+[REGISTERED] Repair_Engine
+[REGISTERED] Execution_Logger
+[REGISTERED] Safety_Module
+[REGISTERED] Core_Loader
+
+management:
+[REGISTERED] Bootstrap
+[REGISTERED] Recovery_Manager
+[REGISTERED] Version_Manager
+[PLAN] 1. Load Registry
+[PLAN] 2. Validate Modules
+[PLAN] 3. Execute Controllers
+[PLAN] 4. Update State
+[PLAN] 5. Generate Report
+
+Status: READY

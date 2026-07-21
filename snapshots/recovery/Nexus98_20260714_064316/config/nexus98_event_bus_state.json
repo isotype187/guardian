@@ -1,0 +1,11 @@
+﻿{
+    "communication":  "enabled",
+    "status":  "active",
+    "created":  {
+                    "value":  "\/Date(1784028601000)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:30:01 AM"
+                },
+    "component":  "Event Bus",
+    "version":  "1.4.0"
+}

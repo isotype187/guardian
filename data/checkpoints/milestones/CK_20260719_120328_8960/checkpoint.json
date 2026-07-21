@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_120328_8960",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "entropy_remediation",
+    "created":  "2026-07-19T12:03:28.3481262-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M9 storage entropy remediation",
+    "sizeBytes":  0
+}

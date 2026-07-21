@@ -1,7 +1,7 @@
 ﻿{
     "version":  "1.0.0",
     "schedulerIntervals":  {
-                               "HEALTH_SCAN":  60,
+                               "HEALTH_SCAN":  90,
                                "STORAGE_SCAN":  300,
                                "EVENT_REVIEW":  120,
                                "MEMORY_MAINTENANCE":  600,

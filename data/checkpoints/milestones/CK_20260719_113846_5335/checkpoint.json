@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_113846_5335",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "bridge",
+    "created":  "2026-07-19T11:38:46.6911597-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M8 Nexus98 governed communication loop",
+    "sizeBytes":  0
+}

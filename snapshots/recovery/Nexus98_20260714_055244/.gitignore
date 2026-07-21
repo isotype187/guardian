@@ -1,0 +1,16 @@
+# Logs
+*.log
+
+# Temporary files
+temp/
+*.tmp
+
+# Reports generated automatically
+reports/*.txt
+
+# Recovery snapshots
+snapshots/temp/
+
+# Python cache
+__pycache__/
+*.pyc

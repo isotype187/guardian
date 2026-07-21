@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_095018_1326",
+    "parent":  "CK_20260719_095018_341",
+    "guardianVersion":  "0.1.0",
+    "creator":  "m3_bootstrap",
+    "created":  "2026-07-19T09:50:18.7840735-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M3_MEMORY_OBSERVABILITY",
+    "sizeBytes":  0
+}

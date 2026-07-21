@@ -1,0 +1,17 @@
+﻿{
+    "component":  "Resource Manager",
+    "version":  "1.6.0",
+    "monitoring":  "enabled",
+    "resources":  [
+                      "CPU",
+                      "Memory",
+                      "GPU",
+                      "Storage"
+                  ],
+    "created":  {
+                    "value":  "\/Date(1784028951611)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 6:35:51 AM"
+                },
+    "status":  "active"
+}

@@ -1,0 +1,88 @@
+﻿Guardian Write Diagnostic
+Time: 07/20/2026 04:12:50
+
+=== PATH CHECK ===
+EXISTS: D:\Nexus98_Guardian
+Attributes: Directory
+EXISTS: D:\Nexus98_Guardian\vcs\.git
+Attributes: Hidden, Directory
+EXISTS: D:\Nexus98_Guardian\vcs\.git\index
+Attributes: Archive
+MISSING: D:\Nexus98_Guardian\vcs\.git\index.lock
+
+=== USER ===
+User:
+desktop-dvhic6m\isoty
+
+=== ACL Guardian Root ===
+Owner:
+DESKTOP-DVHIC6M\isoty
+
+DESKTOP-DVHIC6M\CodexSandboxUsers | Modify, Synchronize | Allow
+S-1-5-21-4096650113-3900366795-381695981-1912912588 | Modify, Synchronize | Allow
+BUILTIN\Administrators | FullControl | Allow
+BUILTIN\Administrators | 268435456 | Allow
+NT AUTHORITY\SYSTEM | FullControl | Allow
+NT AUTHORITY\SYSTEM | 268435456 | Allow
+NT AUTHORITY\Authenticated Users | Modify, Synchronize | Allow
+NT AUTHORITY\Authenticated Users | -536805376 | Allow
+BUILTIN\Users | ReadAndExecute, Synchronize | Allow
+BUILTIN\Users | -1610612736 | Allow
+
+=== GIT TEST ===
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../core/Guardian_Loader.ps1
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	../config/guardian_runtime_config.json
+	../core/Guardian_Operations.ps1
+	../core/Guardian_Operations.ps1.rollback_20260719_150142.bak
+	../data/
+	../m10_cyc.ps1
+	../m10_e2e.ps1
+	../m10_hs.ps1
+	../m10_sched.ps1
+	../m10_smoke.ps1
+	../m10_ss.ps1
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+=== WRITE TEST ===
+WRITE TEST: SUCCESS
+CLEANUP: SUCCESS
+
+=== ACTIVE PROCESSES ===
+Code PID=14452 Started=07/20/2026 03:26:24
+Code PID=15316 Started=07/20/2026 03:43:28
+Code PID=16024 Started=07/20/2026 03:26:25
+Code PID=16868 Started=07/20/2026 03:29:40
+Code PID=17652 Started=07/20/2026 03:27:53
+Code PID=19588 Started=07/20/2026 03:29:29
+Code PID=19800 Started=07/20/2026 03:26:24
+Code PID=20008 Started=07/20/2026 03:29:29
+Code PID=21528 Started=07/20/2026 03:26:24
+Code PID=21824 Started=07/20/2026 03:26:24
+Code PID=24480 Started=07/20/2026 03:27:49
+codex PID=14492 Started=07/20/2026 01:36:35
+codex PID=18880 Started=07/20/2026 03:29:39
+codex PID=23120 Started=07/20/2026 01:53:15
+powershell PID=12908 Started=07/20/2026 01:36:25
+powershell PID=14516 Started=07/20/2026 01:55:34
+powershell PID=15136 Started=07/20/2026 03:44:20
+powershell PID=21756 Started=07/20/2026 01:56:21
+powershell PID=23952 Started=07/20/2026 01:37:05
+powershell PID=24548 Started=07/20/2026 01:53:19
+
+=== LOCK FILES ===
+
+=== GIT INFO ===
+D:/Nexus98_Guardian
+daa8356 feat: implement Guardian M9 storage entropy remediation
+4729202 feat: implement Guardian Nexus98 governed communication loop
+19c1d45 feat: implement Guardian M7 self-development guard and drift gate
+343fe88 feat: implement Guardian M6 Nexus98 communication layer and runtime bridge
+650e6bd feat: implement Guardian M5 controlled remediation action planning and governance integration

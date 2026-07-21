@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_100428_4090",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "recovery_engine",
+    "created":  "2026-07-19T10:04:28.4250563-05:00",
+    "fileCount":  0,
+    "tier":  "emergency",
+    "reason":  "M4 checkpoint creation",
+    "sizeBytes":  0
+}

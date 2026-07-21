@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260719_092650_7895",
+    "parent":  "CK_20260719_092650_3138",
+    "guardianVersion":  "0.1.0",
+    "creator":  "m2_bootstrap",
+    "created":  "2026-07-19T09:26:50.1808231-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M2_EVENT_STORAGE_INTELLIGENCE",
+    "sizeBytes":  0
+}

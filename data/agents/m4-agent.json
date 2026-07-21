@@ -1,0 +1,22 @@
+﻿{
+    "permissions":  [
+
+                    ],
+    "registered":  "2026-07-20T06:43:48.5054713-05:00",
+    "capabilities":  [
+                         "x"
+                     ],
+    "purpose":  "test",
+    "health_state":  "active",
+    "activity":  [
+                     {
+                         "time":  "2026-07-20T06:43:48.5507174-05:00",
+                         "note":  "tick"
+                     }
+                 ],
+    "limitations":  [
+
+                    ],
+    "agent_id":  "m4-agent",
+    "last_seen":  "2026-07-20T06:43:48.5491687-05:00"
+}

@@ -27,8 +27,8 @@ $GuardianLoaderModules = @(
     'Guardian_Comms.ps1',
     'Guardian_DriftGuard.ps1',
     'Guardian_StorageRules.ps1',
-    'Guardian_Bridge.ps1'
-    'Guardian_EntropyRemediation.ps1'
+    'Guardian_Bridge.ps1',
+    'Guardian_EntropyRemediation.ps1',
     'Guardian_Operations.ps1'
 )
 function Import-Guardian {

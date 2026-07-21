@@ -1,0 +1,10 @@
+﻿{
+    "status":  "installed",
+    "created":  {
+                    "value":  "\/Date(1784026241938)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "Tuesday, July 14, 2026 5:50:41 AM"
+                },
+    "component":  "Orchestrator Intelligence",
+    "version":  "0.4.0"
+}
