@@ -100,7 +100,8 @@ Describe 'M10 Heartbeat System' {
     It 'includes warnings in heartbeat' {
         # Create a low health scenario by testing with missing checkpoints
         $heartbeat = Invoke-GuardianHeartbeat
-        $heartbeat.warnings | Should -BeOfType [array]
+        $warnings = $heartbeat.warnings
+        $warnings.GetType().Name | Should -Be 'Object[]'
         # Warnings array may be empty if system is healthy
     }
 }
@@ -152,7 +153,8 @@ Describe 'M10 Risk Analysis' {
         $risk.riskScore | Should -BeGreaterOrEqual 0
         $risk.riskScore | Should -BeLessOrEqual 100
         $risk.riskLevel | Should -BeIn @('low', 'medium', 'high')
-        $risk.factors | Should -BeOfType [array]
+        $factors = $risk.factors
+        $factors.GetType().Name | Should -Be 'Object[]'
         $risk.recommendation | Should -Not -BeNullOrEmpty
     }
 
@@ -342,7 +344,8 @@ Describe 'M10 Storage Governance Integration' {
         $result = Invoke-GuardianStorageGovernanceReview
         $result.findingsCount | Should -BeGreaterOrEqual 0
         $result.byCategory | Should -Not -BeNullOrEmpty
-        $result.recommendations | Should -BeOfType [array]
+        $recommendations = $result.recommendations
+        $recommendations.GetType().Name | Should -Be 'Object[]'
         $result.policy | Should -Not -BeNullOrEmpty
         $result.timestamp | Should -Not -BeNullOrEmpty
     }

@@ -1,6 +1,6 @@
 ﻿{
     "version":  "1.0.0",
-    "captured":  "2026-07-20T06:43:56.2307425-05:00",
+    "captured":  "2026-07-25T15:25:11.1097488-05:00",
     "guardianVersion":  "0.1.0",
     "approvedDirectories":  [
                                 {
@@ -79,6 +79,20 @@
                                     "purpose":  "managed directory: governance",
                                     "lifecycle":  "permanent",
                                     "allowedModifications":  "guardian managed"
+                                },
+                                {
+                                    "path":  "GUARDIAN_HANDOFF",
+                                    "owner":  "guardian",
+                                    "purpose":  "managed directory: GUARDIAN_HANDOFF",
+                                    "lifecycle":  "permanent",
+                                    "allowedModifications":  "manual review required"
+                                },
+                                {
+                                    "path":  "GUARDIAN_UPLOAD_PACKAGE",
+                                    "owner":  "guardian",
+                                    "purpose":  "managed directory: GUARDIAN_UPLOAD_PACKAGE",
+                                    "lifecycle":  "permanent",
+                                    "allowedModifications":  "manual review required"
                                 },
                                 {
                                     "path":  "logs",
@@ -327,7 +341,7 @@
                                 "lifecycle":  "permanent",
                                 "allowedModifications":  "guardian edits under checkpoint",
                                 "status":  "active",
-                                "hash":  "E65FA62B0549BABC113A50C878785E31AD9C0ECE8B9489C6D70808237C615E42"
+                                "hash":  "B89057C22C6ACE39F280DB52842F8E14D4C1FE3BAC98CF6D9C4DBBF734377BD3"
                             },
                             {
                                 "name":  "Guardian_Memory.ps1",
@@ -428,166 +442,6 @@
                                 "allowedModifications":  "guardian edits under checkpoint",
                                 "status":  "active",
                                 "hash":  "1DD5B50745F3672D17C0B7DA12D4CFC39E1D107BE7FE854C4F4A840BF8BA8C0B"
-                            },
-                            {
-                                "name":  "Nexus98_Automation_Engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Automation_Engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "DDF004688F41FFA1896DF7E5D7A311E6D95CACA388EF58019B405B4AF74E5BA0"
-                            },
-                            {
-                                "name":  "Nexus98_Core.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Core.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "E0F5931D9D0DB596E3775E859B9E794F3F2141CE7C47D2511EC0CAA446B2AED3"
-                            },
-                            {
-                                "name":  "Nexus98_Diagnostics_Engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Diagnostics_Engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "2D153EDEEC6B1E2903B823DC539D06B3DDD0BAC7A6B2069F304C157FCCFDEF5C"
-                            },
-                            {
-                                "name":  "Nexus98_Intelligence_Engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Intelligence_Engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "6D28B75FDD9225C4D31B313E35CCCC7DD933D4797AC24A1B0F4BFA5236078460"
-                            },
-                            {
-                                "name":  "Nexus98_Knowledge_Manager.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Knowledge_Manager.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "AFE52CD20ED608A73E0616334C02E3F67E16B138BC29B1B63A1811F8736C6B8B"
-                            },
-                            {
-                                "name":  "Nexus98_Logger.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Logger.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "703D09314B1E8E06A97ECBB2BDDD27C616BA8CE0B5EADE6D0073B5F9ABC0A1AD"
-                            },
-                            {
-                                "name":  "Nexus98_Memory_Engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Memory_Engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "7107E345CDB06704EF1787394634111805F67C4975B246EAC4ACB4F60E301D2B"
-                            },
-                            {
-                                "name":  "Nexus98_Orchestrator_Controller.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Orchestrator_Controller.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "9B61B0BDFE975F12DE48B5771B003D1246C2FE1C2C84A624ED56FB70263F52C7"
-                            },
-                            {
-                                "name":  "Nexus98_Orchestrator_Core.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Orchestrator_Core.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "5AF0DAE1FE28D22597A41154DFFC77D28302DB74FE87501C509F663D480EDD4E"
-                            },
-                            {
-                                "name":  "Nexus98_Report.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Report.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "92CDD675C4D7F84573D5296BB9B6EA694B400D3023273737F2C6A1959D190FD5"
-                            },
-                            {
-                                "name":  "Nexus98_State.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_State.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "152E9FC42525DD315F24D64D429E91145D5CAC3E43E30CC1EA684722124A9108"
-                            },
-                            {
-                                "name":  "Nexus98_Telemetry.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: Nexus98_Telemetry.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "81F5EE9FB43DB5F8A90515CDBE74DAF2B27EF809C9E9A3C6485D120994A7BEC3"
-                            },
-                            {
-                                "name":  "recovery_engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: recovery_engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "73E853D541B6510A07E68C9DE560A832B3F2419B9C88448D10EE31363AF342DB"
-                            },
-                            {
-                                "name":  "run_snapshot_test.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: run_snapshot_test.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "43F63A0706C98D6ED8ADB7A820AA09E36CC22D310D61B9C364481DE141127606"
-                            },
-                            {
-                                "name":  "snapshot_engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: snapshot_engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "80718B051DB8F369DA7346877AC61F91FEEBEDCA3AED25F8F6F1BCD7CDD66B26"
-                            },
-                            {
-                                "name":  "verification_engine.ps1",
-                                "directory":  "core",
-                                "owner":  "guardian",
-                                "purpose":  "module: verification_engine.ps1",
-                                "lifecycle":  "permanent",
-                                "allowedModifications":  "frozen; not wired into loader",
-                                "status":  "legacy-stub",
-                                "hash":  "2E51F0488E7E9F1CE613B363310EE623628A7589712DD48A25DE6891D1985CA8"
                             }
                         ],
     "approvedDataLocations":  [
@@ -649,7 +503,7 @@
                                     "purpose":  "config: guardian_runtime_config.json",
                                     "lifecycle":  "managed",
                                     "allowedModifications":  "guardian edits under checkpoint",
-                                    "hash":  "47D91CC59C8F9D81190EABD4FF836DA75675440C703A310BCF6F9D671875258C"
+                                    "hash":  "6C7920F27CD1F0861DFD93419EC7C8F755CBFD6348B5A936A17460A3CAA42C58"
                                 },
                                 {
                                     "name":  "nexus98_automation_state.json",
@@ -1012,6 +866,20 @@
                                       "allowedModifications":  "guardian managed"
                                   },
                                   {
+                                      "name":  "IDEA.md",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: IDEA.md",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "Launch-Guardian-Hermes.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: Launch-Guardian-Hermes.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
                                       "name":  "m10_cyc.ps1",
                                       "owner":  "guardian",
                                       "purpose":  "top-level artifact: m10_cyc.ps1",
@@ -1071,6 +939,27 @@
                                       "name":  "README.md",
                                       "owner":  "guardian",
                                       "purpose":  "top-level artifact: README.md",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "test_cmd.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: test_cmd.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "test_guardian.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: test_guardian.ps1",
+                                      "lifecycle":  "managed",
+                                      "allowedModifications":  "guardian managed"
+                                  },
+                                  {
+                                      "name":  "test_manual.ps1",
+                                      "owner":  "guardian",
+                                      "purpose":  "top-level artifact: test_manual.ps1",
                                       "lifecycle":  "managed",
                                       "allowedModifications":  "guardian managed"
                                   }

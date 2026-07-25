@@ -5,8 +5,8 @@
                      "intervalSeconds":  60,
                      "enabled":  true,
                      "description":  "Health, resource, and communication checks",
-                     "lastRun":  "2026-07-20T19:18:21.0865875-05:00",
-                     "lastStatus":  "ok",
+                     "lastRun":  null,
+                     "lastStatus":  "never",
                      "lastError":  ""
                  },
                  {
@@ -14,8 +14,8 @@
                      "intervalSeconds":  300,
                      "enabled":  true,
                      "description":  "Entropy analysis, growth tracking, classification",
-                     "lastRun":  "2026-07-20T19:18:21.3353486-05:00",
-                     "lastStatus":  "ok",
+                     "lastRun":  null,
+                     "lastStatus":  "never",
                      "lastError":  ""
                  },
                  {
@@ -23,8 +23,8 @@
                      "intervalSeconds":  120,
                      "enabled":  true,
                      "description":  "Event analysis, severity review, pattern detection",
-                     "lastRun":  "2026-07-20T19:18:31.7668874-05:00",
-                     "lastStatus":  "ok",
+                     "lastRun":  null,
+                     "lastStatus":  "never",
                      "lastError":  ""
                  },
                  {
@@ -32,8 +32,8 @@
                      "intervalSeconds":  600,
                      "enabled":  true,
                      "description":  "Memory cleanup, compression, archival",
-                     "lastRun":  "2026-07-20T19:18:31.8198142-05:00",
-                     "lastStatus":  "ok",
+                     "lastRun":  null,
+                     "lastStatus":  "never",
                      "lastError":  ""
                  },
                  {
@@ -41,18 +41,11 @@
                      "intervalSeconds":  900,
                      "enabled":  true,
                      "description":  "Checkpoint verification, recovery readiness",
-                     "lastRun":  "2026-07-20T19:18:31.9033465-05:00",
-                     "lastStatus":  "ok",
+                     "lastRun":  null,
+                     "lastStatus":  "never",
                      "lastError":  ""
                  }
              ],
-    "created":  "2026-07-20T19:16:28.9655581-05:00",
-    "lastCycle":  "2026-07-20T19:18:21.3323249-05:00",
-    "cycleDurationMs":  10601.6,
-    "cycleResult":  "ok",
-    "cycleSummary":  {
-                         "jobsRun":  4,
-                         "ok":  4,
-                         "failed":  0
-                     }
+    "lastCycle":  null,
+    "created":  "2026-07-25T16:49:43.2447149-05:00"
 }

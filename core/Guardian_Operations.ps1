@@ -68,8 +68,11 @@ function Get-GuardianJob {
     param([string]$Name='')
     if (-not (Test-Path $GuardianSchedulerState)) { return @() }
     $state = Get-Content -Path $GuardianSchedulerState -Encoding UTF8 | ConvertFrom-Json
-    if ($Name) { return @($state.jobs | Where-Object { $_.name -eq $Name }) }
-    return @($state.jobs)
+    if ($Name) { 
+        $jobs = @($state.jobs | Where-Object { $_.name -eq $Name })
+        return ,$jobs
+    }
+    return ,$state.jobs
 }
 
 function Invoke-GuardianJob {
@@ -185,8 +188,8 @@ function Invoke-GuardianHeartbeat {
     $ck = @(Get-GuardianCheckpoints -Tier rolling)
     $lastCk = if ($ck.Count -gt 0) { (($ck | Sort-Object { $_.created } | Select-Object -Last 1).id) } else { $null }
     $warnings = @()
-    if ($health.overallPct -lt 50) { $warnings += 'low overall health' }
-    if ($comm -and $comm.enabled -eq $false) { $warnings += 'bridge disabled' }
+    if ($health.overallPct -lt 50) { $warnings += @('low overall health') }
+    if ($comm -and $comm.enabled -eq $false) { $warnings += @('bridge disabled') }
     $record = [PSCustomObject]@{
         timestamp=(Get-Date).ToString('o')
         status='ALIVE'
@@ -194,7 +197,7 @@ function Invoke-GuardianHeartbeat {
         active_jobs=$activeJobs
         communication_state=if($comm){$comm.enabled}else{$false}
         last_checkpoint=$lastCk
-        warnings=$warnings
+        warnings=@($warnings)
     }
     $record | ConvertTo-Json -Depth 10 -Compress | Add-Content -Path $GuardianHeartbeatLog -Encoding UTF8
     if (Get-Command New-GuardianEvent -ErrorAction SilentlyContinue) {
@@ -286,12 +289,12 @@ function Invoke-GuardianRiskAnalysis {
     $anomalies = if (Get-Command Get-GuardianResourceAnomalies -ErrorAction SilentlyContinue) { @(Get-GuardianResourceAnomalies) } else { @() }
 
     $factors = @()
-    if ($health.overallPct -lt 50) { $factors += 'low overall health' }
-    if ($comm -and $comm.enabled -eq $false) { $factors += 'communication disabled' }
-    if ($comm -and $comm.successRatePct -lt 80) { $factors += 'communication failures' }
-    if ($sec -and $sec.modified.Count -gt 0) { $factors += 'security modification' }
-    if ($drift.Count -gt 0) { $factors += 'architecture drift' }
-    if ($anomalies.Count -gt 0) { $factors += 'resource anomaly' }
+    if ($health.overallPct -lt 50) { $factors += @('low overall health') }
+    if ($comm -and $comm.enabled -eq $false) { $factors += @('communication disabled') }
+    if ($comm -and $comm.successRatePct -lt 80) { $factors += @('communication failures') }
+    if ($sec -and $sec.modified.Count -gt 0) { $factors += @('security modification') }
+    if ($drift.Count -gt 0) { $factors += @('architecture drift') }
+    if ($anomalies.Count -gt 0) { $factors += @('resource anomaly') }
 
     $score = 100.0
     if ($health.overallPct -lt 50) { $score -= 30 }
@@ -308,17 +311,17 @@ function Invoke-GuardianRiskAnalysis {
                      else { 'Escalate: create a checkpoint and require review before any change.' }
 
     $result = [PSCustomObject]@{
-        timestamp=$now.ToString('o')
-        riskScore=$score
-        riskLevel=$level
-        factors=$factors
-        health=$health.overallPct
-        communicationEnabled=if($comm){$comm.enabled}else{$null}
-        securityModifications=if($sec){$sec.modified.Count}else{$null}
-        driftCount=$drift.Count
-        resourceAnomalies=$anomalies.Count
-        recommendation=$recommendation
-    }
+            timestamp=$now.ToString('o')
+            riskScore=$score
+            riskLevel=$level
+            factors=@($factors)
+            health=$health.overallPct
+            communicationEnabled=if($comm){$comm.enabled}else{$null}
+            securityModifications=if($sec){$sec.modified.Count}else{$null}
+            driftCount=$drift.Count
+            resourceAnomalies=$anomalies.Count
+            recommendation=$recommendation
+        }
     $result | ConvertTo-Json -Depth 10 | Set-Content -Path $GuardianRiskLatest -Encoding UTF8
     if (Get-Command Write-GuardianMemory -ErrorAction SilentlyContinue) {
         Write-GuardianMemory -Memory (New-GuardianMemory -Source 'operations' -Category pattern -Importance medium -Description "Risk analysis: score=$score level=$level") | Out-Null
@@ -373,7 +376,7 @@ function Set-GuardianRuntimeConfig {
     if ($cfg.schedulerIntervals) {
         $cfg.schedulerIntervals.PSObject.Properties | ForEach-Object {
             $j = Get-GuardianJob -Name $_.Name
-            if ($j.Count -gt 0) { Register-GuardianJob -Name $_.Name -IntervalSeconds $_.Value -Enabled $true }
+            if ($j.Count -gt 0) { Register-GuardianJob -Name $_.Name -IntervalSeconds $_.Value -Enabled $true | Out-Null }
         }
     }
     if (Get-Command Write-GuardianAudit -ErrorAction SilentlyContinue) {
@@ -507,7 +510,8 @@ function Set-GuardianRuntimeConfigValidated {
         }
         return [PSCustomObject]@{ updated=$false; rejected=$true; errors=$v.errors }
     }
-    return (Set-GuardianRuntimeConfig -Config $Config)
+    $result = Set-GuardianRuntimeConfig -Config $Config
+    return [PSCustomObject]@{ updated=$result.updated; rejected=$false; checkpoint=$result.checkpoint }
 }
 
 function Sync-GuardianSchedulerFromConfig {
@@ -518,6 +522,8 @@ function Sync-GuardianSchedulerFromConfig {
         $j = Get-GuardianJob -Name $_.Name
         if ($j.Count -gt 0) { Register-GuardianJob -Name $_.Name -IntervalSeconds $_.Value -Enabled $true | Out-Null }
     }
+    # Force re-read of scheduler state to verify sync
+    $state = Get-Content -Path $GuardianSchedulerState -Encoding UTF8 | ConvertFrom-Json
     return $true
 }
 
@@ -599,10 +605,10 @@ function Invoke-GuardianStorageGovernanceReview {
     $recommendations = @()
     foreach ($f in $findings) {
         $status = if ($f.lifecycle) { $f.lifecycle.cleanupStatus } else { 'review' }
-        if ($status -eq 'required') { $recommendations += [PSCustomObject]@{ rule=$f.rule; action='governance_review_required'; detail=$f.detail } }
+        if ($status -eq 'required') { $recommendations += ,[PSCustomObject]@{ rule=$f.rule; action='governance_review_required'; detail=$f.detail } }
     }
     $result = [PSCustomObject]@{
-        findingsCount=$findings.Count; byCategory=$byRule; recommendations=$recommendations
+        findingsCount=$findings.Count; byCategory=$byRule; recommendations=@($recommendations)
         policy='Observation-first: recommend remediation; never auto-delete without governance approval.'
         timestamp=(Get-Date).ToString('o')
     }
@@ -614,8 +620,13 @@ function Invoke-GuardianStorageGovernanceReview {
 
 function Repair-GuardianOperationsState {
     $fixed = @()
-    if (-not (Test-Path $GuardianSchedulerState)) { Initialize-GuardianOperations | Out-Null; $fixed += 'scheduler_state_recreated' }
-    if (-not (Test-Path $GuardianRuntimeState)) { Initialize-GuardianOperations | Out-Null; $fixed += 'runtime_state_recreated' }
+    $needScheduler = -not (Test-Path $GuardianSchedulerState)
+    $needRuntime = -not (Test-Path $GuardianRuntimeState)
+    if ($needScheduler -or $needRuntime) { 
+        Initialize-GuardianOperations | Out-Null 
+    }
+    if ($needScheduler) { $fixed += 'scheduler_state_recreated' }
+    if ($needRuntime) { $fixed += 'runtime_state_recreated' }
     Sync-GuardianSchedulerFromConfig | Out-Null
     return [PSCustomObject]@{ repaired=$fixed; timestamp=(Get-Date).ToString('o') }
 }
