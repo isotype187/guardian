@@ -1,0 +1,346 @@
+name: Guardian CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+env:
+  GUARDIAN_ROOT: Nexus98_Guardian
+
+jobs:
+  syntax-check:
+    name: Syntax Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Verify Module Count
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          $modules = Get-ChildItem .\core\Guardian_*.ps1
+          Write-Host "Found $($modules.Count) Guardian modules"
+          if ($modules.Count -lt 30) {
+            Write-Error "Expected at least 30 modules, found $($modules.Count)"
+            exit 1
+          }
+
+  unit-tests:
+    name: Unit Tests (Windows)
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Create Emergency Checkpoint
+        uses: ./.github/actions/guardian-checkpoint
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+          action: create
+          tier: emergency
+          label: "CI Unit Tests - ${{ github.sha }}"
+
+      - name: Run Unit Tests
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          .\scripts\Run-GuardianTests.ps1 -Mode Unit -VerboseOutput
+
+      - name: Restore Checkpoint
+        if: always()
+        uses: ./.github/actions/guardian-checkpoint
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+          action: restore
+
+  unit-tests-ubuntu:
+    name: Unit Tests (Ubuntu)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Run Unit Tests
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          .\scripts\Run-GuardianTests.ps1 -Mode Unit -VerboseOutput
+
+  integration-tests:
+    name: Integration Tests
+    runs-on: windows-latest
+    timeout-minutes: 15
+    needs: [syntax-check, unit-tests, unit-tests-ubuntu]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Create Emergency Checkpoint
+        uses: ./.github/actions/guardian-checkpoint
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+          action: create
+          tier: emergency
+          label: "CI Integration Tests - ${{ github.sha }}"
+
+      - name: Run Integration Tests
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          .\scripts\Run-GuardianTests.ps1 -Mode Integration -VerboseOutput
+
+      - name: Restore Checkpoint
+        if: always()
+        uses: ./.github/actions/guardian-checkpoint
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+          action: restore
+
+  architecture-drift:
+    name: Architecture Drift Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [syntax-check, unit-tests, unit-tests-ubuntu, integration-tests]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Run Architecture Drift Test
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          $result = Test-GuardianArchitectureDrift
+          Write-Host "Drift check: $($result.status)"
+          if ($result.status -ne 'clean') {
+            Write-Error "Architecture drift detected:"
+            $result.drift | Format-Table | Out-String | Write-Host
+            exit 1
+          }
+
+  policy-compliance:
+    name: Policy Compliance
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [syntax-check, unit-tests, unit-tests-ubuntu, integration-tests]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Run Governance Mutation Tests
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          # Test that governance gates work correctly
+          . .\core\Guardian_Loader.ps1
+          Import-Guardian -Root (Resolve-Path .)
+          
+          # Test 1: High-risk without checkpoint should be DELAYED
+          $r1 = Test-GuardianPolicy -ActionDescription 'delete production data' -RiskLevel high -CheckpointAvailable $false
+          if ($r1.decision -ne 'DELAYED') { throw "Expected DELAYED, got $($r1.decision)" }
+          
+          # Test 2: Critical with safeguards should REQUIRE_REVIEW
+          $r2 = Test-GuardianPolicy -ActionDescription 'modify core logic' -RiskLevel critical -SafeguardsIntact $true -CheckpointAvailable $true
+          if ($r2.decision -ne 'REQUIRE_REVIEW') { throw "Expected REQUIRE_REVIEW, got $($r2.decision)" }
+          
+          # Test 3: Critical without safeguards should BLOCK
+          $r3 = Test-GuardianPolicy -ActionDescription 'disable safety' -RiskLevel critical -SafeguardsIntact $false
+          if ($r3.decision -ne 'BLOCK') { throw "Expected BLOCK, got $($r3.decision)" }
+          
+          # Test 4: Low risk with checkpoint should ALLOW
+          $r4 = Test-GuardianPolicy -ActionDescription 'read config' -RiskLevel low -CheckpointAvailable $true
+          if ($r4.decision -ne 'ALLOW') { throw "Expected ALLOW, got $($r4.decision)" }
+          
+          Write-Host "All governance mutation tests passed" -ForegroundColor Green
+
+  contract-tests:
+    name: Contract Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [syntax-check, unit-tests, unit-tests-ubuntu, integration-tests]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Validate Bridge Contracts
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          . .\core\Guardian_Loader.ps1
+          Import-Guardian -Root (Resolve-Path .)
+          
+          # Test message serialization round-trip
+          $msg = New-GuardianHealthMessage -Component 'test' -Status 'healthy' -Metrics @{}
+          $json = Export-GuardianMessage -Message $msg
+          $parsed = $json | ConvertFrom-Json
+          if ($parsed.type -ne 'HEALTH_MESSAGE') { throw "Serialization failed" }
+          
+          # Test response contract
+          $resp = New-GuardianResponse -Decision 'ALLOW' -Reason 'test'
+          $json = Export-GuardianMessage -Message $resp
+          $parsed = $json | ConvertFrom-Json
+          if ($parsed.type -ne 'GUARDIAN_RESPONSE') { throw "Response serialization failed" }
+          
+          Write-Host "All contract serialization tests passed" -ForegroundColor Green
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [syntax-check]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Run PSScriptAnalyzer
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          $results = Invoke-ScriptAnalyzer -Path .\core\ -Severity Warning -ErrorAction SilentlyContinue
+          if ($results.Count -gt 0) {
+            $results | Format-Table RuleName, Severity, Line, Message -AutoSize | Out-String | Write-Host
+            Write-Error "PSScriptAnalyzer found $($results.Count) issues"
+          } else {
+            Write-Host "PSScriptAnalyzer: No issues found" -ForegroundColor Green
+          }
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+          config: .gitleaks.toml
+          args: --verbose
+
+  doc-sync:
+    name: Documentation Sync Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [syntax-check]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Setup Guardian
+        uses: ./.github/actions/guardian-setup
+        with:
+          guardian-root: ${{ env.GUARDIAN_ROOT }}
+
+      - name: Validate Knowledge Vault Frontmatter
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          . .\core\Guardian_Loader.ps1
+          Import-Guardian -Root (Resolve-Path .)
+          
+          if (Get-Command Validate-GuardianDocFrontmatter -ErrorAction SilentlyContinue) {
+            $result = Validate-GuardianDocFrontmatter -Path .\Knowledge
+            if ($result.invalid.Count -gt 0) {
+              Write-Error "Found $($result.invalid.Count) documents with invalid frontmatter"
+              $result.invalid | ForEach-Object { Write-Host "  $($_.path): $($_.errors -join ', ')" }
+              exit 1
+            }
+            Write-Host "All documents have valid frontmatter" -ForegroundColor Green
+          } else {
+            Write-Warning "Validate-GuardianDocFrontmatter not implemented - skipping"
+          }
+
+      - name: Validate Documentation Links
+        shell: pwsh
+        working-directory: ${{ env.GUARDIAN_ROOT }}
+        run: |
+          if (Get-Command Validate-GuardianDocLinks -ErrorAction SilentlyContinue) {
+            $result = Validate-GuardianDocLinks -Path .\Knowledge
+            if ($result.broken.Count -gt 0) {
+              Write-Error "Found $($result.broken.Count) broken links"
+              $result.broken | ForEach-Object { Write-Host "  $($_.from) -> $($_.to)" }
+              exit 1
+            }
+            Write-Host "All documentation links valid" -ForegroundColor Green
+          } else {
+            Write-Warning "Validate-GuardianDocLinks not implemented - skipping"
+          }
+
+  ci-summary:
+    name: CI Summary
+    runs-on: ubuntu-latest
+    needs: [syntax-check, unit-tests, unit-tests-ubuntu, integration-tests, architecture-drift, policy-compliance, contract-tests, security-scan, doc-sync]
+    if: always()
+    steps:
+      - name: Determine Overall Status
+        run: |
+          needs_json='${{ toJson(needs) }}'
+          echo "Needs: $needs_json"
+          
+          failed_jobs=$(echo "$needs_json" | jq -r 'to_entries[] | select(.value.result != "success" and .value.result != "skipped") | .key')
+          
+          if [ -n "$failed_jobs" ]; then
+            echo "FAILED JOBS: $failed_jobs"
+            exit 1
+          else
+            echo "ALL JOBS PASSED"
+            exit 0
+          fi

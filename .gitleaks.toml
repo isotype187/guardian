@@ -1,0 +1,31 @@
+# Gitleaks Configuration for Guardian
+title = "Guardian Gitleaks Config"
+
+[allowlist]
+description = "Guardian-specific allowlist"
+paths = [
+  "(?i).*\\.jsonl$",  # JSONL logs may contain IDs that look like secrets
+  "(?i).*\\.json$",   # Config files may have placeholder values
+]
+
+# Custom rules for Guardian-specific patterns
+[[rules]]
+id = "guardian-api-key"
+description = "Guardian API key pattern"
+regex = '''guardian[_-]?api[_-]?key['"]?\s*[:=]\s*['"][^'"]+['"]'''
+tags = ["key", "guardian"]
+
+[[rules]]
+id = "nexus98-token"
+description = "Nexus98 authentication token"
+regex = '''nexus98[_-]?token['"]?\s*[:=]\s*['"][^'"]+['"]'''
+tags = ["token", "nexus98"]
+
+[[rules]]
+id = "powershell-credential"
+description = "PowerShell PSCredential or secure string"
+regex = '''(?i)(password|secret|credential|apikey|accesstoken)['"]?\s*[:=]\s*['"][^'"]{8,}['"]'''
+tags = ["credential", "powershell"]
+
+# Standard secret patterns (inherited from gitleaks default config)
+# We'll rely on gitleaks default rules for common patterns

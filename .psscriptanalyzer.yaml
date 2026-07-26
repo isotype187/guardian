@@ -1,0 +1,410 @@
+# PSScriptAnalyzer Settings for Nexus98 Guardian
+
+# This file configures PSScriptAnalyzer rules for the Guardian codebase.
+# Rules are configured based on Guardian coding standards and PowerShell best practices.
+
+# Rule severity levels: Error, Warning, Information
+
+# Rules to enable with specific severity
+IncludeRules:
+  # Script structure
+  - PSUseDeclaredVarsMoreThanAssignments
+  - PSUseShouldProcessForStateChangingFunctions
+  - PSUseConsistentWhitespace
+  - PSUseConsistentIndentation
+  - PSUseBraces
+  - PSUseSemicolonsCorrectly
+  - PSUseCurlyBracesForBlocks
+  - PSUseDeclaredVarsMoreThanAssignments
+  - PSUseShouldProcessForStateChangingFunctions
+  - PSUseCorrectCasing
+  - PSUseConsistentNaming
+  - PSUseApprovedVerbs
+  - PSUseSingularNouns
+  - PSUsePascalCase
+  - PSUseCamelCase
+  - PSUsePascalCaseForModuleName
+  - PSUseSingularNounsForParameter
+  - PSUsePascalCaseForParameter
+  - PSUseCamelCaseForVariable
+  - PSUsePascalCaseForProperty
+  - PSUsePascalCaseForClass
+  - PSUsePascalCaseForEnum
+  - PSUsePascalCaseForInterface
+
+  # Parameters
+  - PSUseParameterBinding
+  - PSUseParameterValidation
+  - PSUseParameterAttributes
+  - PSUseMandatoryParameters
+  - PSUseParameterAliases
+  - PSUseParameterValidationAttributes
+  - PSUseParameterValidationScript
+  - PSUseParameterValidationSet
+  - PSUseParameterValidationRange
+  - PSUseParameterValidationLength
+  - PSUseParameterValidationPattern
+  - PSUseParameterHelpMessage
+
+  # Error handling
+  - PSUseTryCatchFinally
+  - PSUseErrorActionPreference
+  - PSUseErrorActionStop
+  - PSUseErrorActionContinue
+  - PSUseErrorActionSilentlyContinue
+  - PSUseErrorActionInquire
+  - PSUseErrorActionIgnore
+  - PSUseErrorActionDefault
+
+  # Output
+  - PSUseWriteOutput
+  - PSUseWriteVerbose
+  - PSUseWriteWarning
+  - PSUseWriteError
+  - PSUseWriteDebug
+  - PSUseWriteInformation
+  - PSUseWriteProgress
+  - PSUseWriteHost
+  - PSUseOutNull
+  - PSUseOutDefault
+  - PSUseOutFile
+  - PSUseOutString
+  - PSUseOutGridView
+
+  # Pipeline
+  - PSUsePipeline
+  - PSUsePipelineInput
+  - PSUsePipelineOutput
+  - PSUseForeachObject
+  - PSUseWhereObject
+  - PSUseSelectObject
+  - PSUseSortObject
+  - PSUseGroupObject
+  - PSUseMeasureObject
+  - PSUseCompareObject
+  - PSUseConvertTo
+  - PSUseConvertFrom
+  - PSUseImport
+  - PSUseExport
+
+  # Modules
+  - PSUseModuleManifest
+  - PSUseModuleVersion
+  - PSUseModuleDependencies
+  - PSUseModuleNesting
+  - PSUseModuleAutoDiscovery
+  - PSUseModuleExplicitImport
+  - PSUseModuleExplicitExport
+  - PSUseModulePrivateFunctions
+  - PSUseModulePublicFunctions
+  - PSUseModulePrivateVariables
+  - PSUseModulePublicVariables
+  - PSUseModulePrivateAliases
+  - PSUseModulePublicAliases
+
+  # Security
+  - PSUseSecureString
+  - PSUseEncryptedPassword
+  - PSUseCredentialParameter
+  - PSUseCredentialAttribute
+  - PSUseCredentialValidation
+  - PSUseCredentialEncryption
+  - PSUseCredentialDecryption
+  - PSUseCredentialStorage
+  - PSUseCredentialRetrieval
+  - PSUseCredentialRotation
+
+  # Performance
+  - PSUseFilterLeft
+  - PSUseWhereObjectFilter
+  - PSUseForeachObjectFilter
+  - PSUseSelectObjectFirst
+  - PSUseSelectObjectLast
+  - PSUseSelectObjectSkip
+  - PSUseSelectObjectUnique
+  - PSUseSortObjectProperty
+  - PSUseGroupObjectProperty
+  - PSUseMeasureObjectProperty
+  - PSUseCompareObjectProperty
+  - PSUseConvertToCsv
+  - PSUseConvertToJson
+  - PSUseConvertToXml
+  - PSUseConvertFromCsv
+  - PSUseConvertFromJson
+  - PSUseConvertFromXml
+
+  # Documentation
+  - PSUseCommentBasedHelp
+  - PSUseCommentBasedHelpSynopsis
+  - PSUseCommentBasedHelpDescription
+  - PSUseCommentBasedHelpParameter
+  - PSUseCommentBasedHelpExample
+  - PSUseCommentBasedHelpInputs
+  - PSUseCommentBasedHelpOutputs
+  - PSUseCommentBasedHelpNotes
+  - PSUseCommentBasedHelpLinks
+  - PSUseCommentBasedHelpComponent
+  - PSUseCommentBasedHelpRole
+  - PSUseCommentBasedHelpFunctionality
+
+  # Best practices
+  - PSUseStrictMode
+  - PSUseSetStrictMode
+  - PSUseSetStrictModeLatest
+  - PSUseSetStrictModeVersion
+  - PSUseSetStrictModeOff
+  - PSUseSetStrictModeOn
+  - PSUseSetStrictModeVersionLatest
+  - PSUseSetStrictModeVersion1
+  - PSUseSetStrictModeVersion2
+
+# Rules to exclude (too noisy or not applicable)
+ExcludeRules:
+  # Too strict for Guardian patterns
+  - PSUseWriteOutputInsteadOfWriteHost
+  - PSUseWriteVerboseForInformation
+  - PSUseWriteWarningForWarning
+  - PSUseWriteErrorForError
+  - PSUseWriteDebugForDebug
+  - PSUseWriteInformationForInformation
+  - PSUseWriteProgressForProgress
+  - PSUseOutNullInsteadOfAssignment
+  - PSUseOutDefaultInsteadOfFormatTable
+  - PSUseOutFileInsteadOfSetContent
+  - PSUseOutStringInsteadOfFormatList
+  - PSUseOutGridViewInsteadOfFormatTable
+
+  # Module rules that don't fit Guardian structure
+  - PSUseModuleManifestForModule
+  - PSUseModuleVersionForModule
+  - PSUseModuleDependenciesForModule
+  - PSUseModuleNestingForModule
+  - PSUseModuleAutoDiscoveryForModule
+  - PSUseModuleExplicitImportForModule
+  - PSUseModuleExplicitExportForModule
+  - PSUseModulePrivateFunctionsForModule
+  - PSUseModulePublicFunctionsForModule
+  - PSUseModulePrivateVariablesForModule
+  - PSUseModulePublicVariablesForModule
+  - PSUseModulePrivateAliasesForModule
+  - PSUseModulePublicAliasesForModule
+
+  # Parameter rules too strict
+  - PSUseParameterAliasesForParameter
+  - PSUseParameterValidationAttributesForParameter
+  - PSUseParameterValidationScriptForParameter
+  - PSUseParameterValidationSetForParameter
+  - PSUseParameterValidationRangeForParameter
+  - PSUseParameterValidationLengthForParameter
+  - PSUseParameterValidationPatternForParameter
+  - PSUseParameterHelpMessageForParameter
+
+  # Performance rules too aggressive
+  - PSUseFilterLeftForWhereObject
+  - PSUseWhereObjectFilterForWhereObject
+  - PSUseForeachObjectFilterForForeachObject
+  - PSUseSelectObjectFirstForSelectObject
+  - PSUseSelectObjectLastForSelectObject
+  - PSUseSelectObjectSkipForSelectObject
+  - PSUseSelectObjectUniqueForSelectObject
+  - PSUseSortObjectPropertyForSortObject
+  - PSUseGroupObjectPropertyForGroupObject
+  - PSUseMeasureObjectPropertyForMeasureObject
+  - PSUseCompareObjectPropertyForCompareObject
+  - PSUseConvertToCsvForExportCsv
+  - PSUseConvertToJsonForConvertToJson
+  - PSUseConvertToXmlForConvertToXml
+  - PSUseConvertFromCsvForImportCsv
+  - PSUseConvertFromJsonForConvertFromJson
+  - PSUseConvertFromXmlForConvertFromXml
+
+  # Documentation rules too verbose
+  - PSUseCommentBasedHelpForAll
+  - PSUseCommentBasedHelpSynopsisForAll
+  - PSUseCommentBasedHelpDescriptionForAll
+  - PSUseCommentBasedHelpParameterForAll
+  - PSUseCommentBasedHelpExampleForAll
+  - PSUseCommentBasedHelpInputsForAll
+  - PSUseCommentBasedHelpOutputsForAll
+  - PSUseCommentBasedHelpNotesForAll
+  - PSUseCommentBasedHelpLinksForAll
+  - PSUseCommentBasedHelpComponentForAll
+  - PSUseCommentBasedHelpRoleForAll
+  - PSUseCommentBasedHelpFunctionalityForAll
+
+  # Strict mode
+  - PSUseStrictModeForScript
+  - PSUseSetStrictModeForScript
+  - PSUseSetStrictModeLatestForScript
+  - PSUseSetStrictModeVersionForScript
+  - PSUseSetStrictModeOffForScript
+  - PSUseSetStrictModeOnForScript
+  - PSUseSetStrictModeVersionLatestForScript
+  - PSUseSetStrictModeVersion1ForScript
+  - PSUseSetStrictModeVersion2ForScript
+
+# Rule configurations
+RuleConfiguration:
+  # Allow some flexibility in naming for Guardian modules
+  PSUseConsistentNaming:
+    AllowPascalCase: true
+    AllowCamelCase: true
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseApprovedVerbs:
+    AllowUnapprovedVerbs:
+      - "Import"  # Used in Import-Guardian
+      - "Export"  # Used in Export-Guardian*
+      - "Initialize"  # Used in Initialize-GuardianEnvironment
+      - "Record"  # Used in Record-GuardianGovernanceDecision
+      - "Compress"  # Used in Compress-GuardianMemory
+      - "Search"  # Used in Search-GuardianMemory
+      - "Test"  # Used in Test-GuardianPolicy, Test-GuardianArchitectureDrift
+      - "Compress"  # Used in Compress-GuardianMemory
+      - "Search"  # Used in Search-GuardianMemory
+      - "Get"  # Standard verb
+      - "Set"  # Standard verb
+      - "New"  # Standard verb
+      - "Remove"  # Standard verb
+      - "Test"  # Standard verb
+      - "Start"  # Standard verb
+      - "Stop"  # Standard verb
+      - "Enable"  # Standard verb
+      - "Disable"  # Standard verb
+      - "Invoke"  # Standard verb
+      - "Invoke"  # Standard verb
+
+  PSUseConsistentWhitespace:
+    IndentSize: 4
+    TabWidth: 4
+    UseTabs: false
+    EndOfLine: "LF"
+
+  PSUseConsistentIndentation:
+    IndentSize: 4
+    TabWidth: 4
+    UseTabs: false
+
+  PSUseBraces:
+    AllowSingleLineBraces: true
+    RequireBracesForSingleLine: false
+
+  PSUseSemicolonsCorrectly:
+    AllowTrailingSemicolons: false
+    AllowLeadingSemicolons: false
+
+  PSUseCurlyBracesForBlocks:
+    AllowSingleLineBlocks: true
+    RequireBracesForSingleLine: true
+
+  PSUseDeclaredVarsMoreThanAssignments:
+    AllowUnusedVariables: false
+    AllowUnusedParameters: true
+
+  PSUseShouldProcessForStateChangingFunctions:
+    RequireShouldProcess: true
+    RequireShouldContinue: false
+
+  PSUseConsistentNaming:
+    AllowPascalCase: true
+    AllowCamelCase: true
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseApprovedVerbs:
+    AllowUnapprovedVerbs:
+      - "Import"
+      - "Export"
+      - "Initialize"
+      - "Record"
+      - "Compress"
+      - "Search"
+
+  PSUseCorrectCasing:
+    AllowPascalCase: true
+    AllowCamelCase: true
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseSingularNouns:
+    AllowPlural: false
+    AllowSingular: true
+
+  PSUsePascalCase:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseCamelCase:
+    AllowPascalCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUsePascalCaseForModuleName:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseSingularNounsForParameter:
+    AllowPlural: false
+    AllowSingular: true
+
+  PSUsePascalCaseForParameter:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUseCamelCaseForVariable:
+    AllowPascalCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUsePascalCaseForProperty:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUsePascalCaseForClass:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUsePascalCaseForEnum:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+  PSUsePascalCaseForInterface:
+    AllowCamelCase: false
+    AllowUnderscores: false
+    AllowDashes: false
+
+# File patterns
+FilePatterns:
+  Include:
+    - "*.ps1"
+    - "*.psm1"
+    - "*.psd1"
+  Exclude:
+    - "**/tests/fixtures/**"
+    - "**/archive/**"
+    - "**/.git/**"
+    - "**/.vscode/**"
+    - "**/.venv/**"
+    - "**/node_modules/**"
+
+# Severity overrides
+Severity:
+  PSUseWriteOutputInsteadOfWriteHost: Warning
+  PSUseWriteVerboseForInformation: Warning
+  PSUseWriteWarningForWarning: Warning
+  PSUseWriteErrorForError: Warning
+  PSUseWriteDebugForDebug: Warning
+  PSUseWriteInformationForInformation: Warning
+  PSUseWriteProgressForProgress: Warning
+  PSUseOutNullInsteadOfAssignment: Information
+  PSUseOutDefaultInsteadOfFormatTable: Information
+  PSUseOutFileInsteadOfSetContent: Information
+  PSUseOutStringInsteadOfFormatList: Information
+  PSUseOutGridViewInsteadOfFormatTable: Information
