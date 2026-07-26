@@ -1,0 +1,45 @@
+﻿{
+    "checkpoint":  "CK_20260726_174919",
+    "hermes":  {
+                   "instance_b":  "COMPLETE",
+                   "instance_a":  "COMPLETE"
+               },
+    "timestamp":  "\/Date(1785106320465)\/",
+    "files":  [
+                  {
+                      "File":  "requirements.psd1",
+                      "Exists":  true,
+                      "Modified":  "\/Date(1785092831306)\/"
+                  },
+                  {
+                      "File":  "core\\Guardian_Loader.ps1",
+                      "Exists":  true,
+                      "Modified":  "\/Date(1785093979643)\/"
+                  },
+                  {
+                      "File":  "scripts\\Install-GuardianDependencies.psm1",
+                      "Exists":  true,
+                      "Modified":  "\/Date(1785092863844)\/"
+                  }
+              ],
+    "validation":  {
+                       "syntax":  [
+                                      {
+                                          "File":  "requirements.psd1",
+                                          "Status":  "PASS"
+                                      },
+                                      {
+                                          "File":  "core\\Guardian_Loader.ps1",
+                                          "Status":  "PASS"
+                                      },
+                                      {
+                                          "File":  "scripts\\Install-GuardianDependencies.psm1",
+                                          "Status":  "PASS"
+                                      }
+                                  ],
+                       "pester":  "PASS"
+                   },
+    "project":  "Nexus98 Guardian",
+    "status":  "READY_FOR_GUARDIAN_REVIEW",
+    "milestone":  "M11"
+}

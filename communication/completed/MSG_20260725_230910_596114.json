@@ -1,0 +1,22 @@
+﻿{
+    "message_id":  "MSG_20260725_230910_596114",
+    "correlation_id":  "COR_20260725_230910_581928",
+    "timestamp":  "2026-07-25T23:09:10.6827598-05:00",
+    "sender":  "Nexus98",
+    "receiver":  "Guardian",
+    "message_type":  "ANALYSIS_REQUEST",
+    "risk_level":  "high",
+    "permission_required":  true,
+    "authorization_status":  "NONE",
+    "checkpoint_reference":  "",
+    "content":  {
+
+                },
+    "metadata":  {
+
+                 },
+    "status":  "FAILED",
+    "attempt_count":  0,
+    "created_time":  "2026-07-25T23:09:10.6827598-05:00",
+    "updated_time":  "2026-07-25T23:09:10.6898401-05:00"
+}

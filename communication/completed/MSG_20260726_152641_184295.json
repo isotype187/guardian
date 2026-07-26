@@ -1,0 +1,22 @@
+﻿{
+    "message_id":  "MSG_20260726_152641_184295",
+    "correlation_id":  "COR_20260726_152641_460359",
+    "timestamp":  "2026-07-26T15:26:41.4091823-05:00",
+    "sender":  "RogueAI",
+    "receiver":  "Nexus98",
+    "message_type":  "SYSTEM_HEALTH_REPORT",
+    "risk_level":  "low",
+    "permission_required":  false,
+    "authorization_status":  "NONE",
+    "checkpoint_reference":  "",
+    "content":  {
+
+                },
+    "metadata":  {
+
+                 },
+    "status":  "FAILED",
+    "attempt_count":  0,
+    "created_time":  "2026-07-26T15:26:41.4091823-05:00",
+    "updated_time":  "2026-07-26T15:26:41.4186949-05:00"
+}

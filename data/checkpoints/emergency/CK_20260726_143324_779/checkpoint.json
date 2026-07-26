@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260726_143324_779",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "drift_guard",
+    "created":  "2026-07-26T14:33:24.3027948-05:00",
+    "fileCount":  0,
+    "tier":  "emergency",
+    "reason":  "runtime config change",
+    "sizeBytes":  0
+}

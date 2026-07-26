@@ -1,0 +1,64 @@
+name: 'Guardian Checkpoint'
+description: 'Create, verify, and restore Guardian checkpoints for CI safety'
+author: 'Guardian Engineering Team'
+inputs:
+  guardian-root:
+    description: 'Path to Guardian root directory'
+    required: true
+    default: 'Nexus98_Guardian'
+  tier:
+    description: 'Checkpoint tier (rolling|milestones|emergency|archive)'
+    required: false
+    default: 'emergency'
+  label:
+    description: 'Checkpoint label/description'
+    required: false
+    default: 'CI Checkpoint'
+  action:
+    description: 'Action to perform (create|restore|verify|list)'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Load Guardian Modules
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        . .\core\Guardian_Loader.ps1
+        Import-Guardian -Root (Resolve-Path .)
+
+    - name: Create Checkpoint
+      if: inputs.action == 'create'
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        $ck = New-GuardianCheckpoint -Tier ${{ inputs.tier }} -Reason '${{ inputs.label }}'
+        Write-Host "Created checkpoint: $($ck.id) at $($ck.path)"
+        echo "CHECKPOINT_ID=$($ck.id)" >> $env:GITHUB_OUTPUT
+        echo "CHECKPOINT_PATH=$($ck.path)" >> $env:GITHUB_OUTPUT
+
+    - name: Restore Checkpoint
+      if: inputs.action == 'restore'
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        Restore-GuardianCheckpoint -Confirm:$false
+        Write-Host "Restored latest checkpoint" -ForegroundColor Green
+
+    - name: Verify Checkpoint
+      if: inputs.action == 'verify'
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        $result = Test-GuardianCheckpointIntegrity
+        Write-Host "Checkpoint verification: $($result.status)"
+        if ($result.status -ne 'valid') { exit 1 }
+
+    - name: List Checkpoints
+      if: inputs.action == 'list'
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        $ckps = Get-GuardianCheckpoint
+        Write-Host "Available checkpoints: $($ckps.Count)"
+        $ckps | Format-Table id, tier, timestamp, reason -AutoSize

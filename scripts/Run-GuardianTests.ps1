@@ -1,19 +1,37 @@
 <#
 .SYNOPSIS
-    Guardian Test Runner - Executes all Guardian test suites in order.
+    Guardian Test Runner - Executes all Guardian test suites in CI/CD pipeline.
 
 .DESCRIPTION
-    Runs Foundation (M0), M2-M10 test suites sequentially.
+    Runs Foundation (M0), M2-M10 test suites with proper tagging support.
+    Supports Unit, Integration, and Full test modes.
     Produces summary report with pass/fail counts and exit code for CI.
 
 .NOTES
     Must be run from the Guardian root directory (D:\Nexus98_Guardian).
     Requires Pester v6+.
+
+.PARAMETER Mode
+    Test mode: 'Unit', 'Integration', 'Full' (default: 'Full')
+
+.PARAMETER VerboseOutput
+    Show detailed Pester output
+
+.PARAMETER FailFast
+    Stop on first failure
+
+.PARAMETER TestFilter
+    Filter tests by name pattern
 #>
 
 param(
+    [ValidateSet('Unit', 'Integration', 'Full')]
+    [string]$Mode = 'Full',
+    
     [switch]$VerboseOutput,
+    
     [switch]$FailFast,
+    
     [string[]]$TestFilter = @()
 )
 
@@ -23,17 +41,24 @@ $testsDir = Join-Path $root 'tests'
 
 # Test suites in dependency order
 $testSuites = @(
-    @{ Name = 'Foundation (M0)'; Path = 'Guardian.Foundation.Tests.ps1' }
-    @{ Name = 'M2 Event + Storage Intelligence'; Path = 'Guardian.M2.Tests.ps1' }
-    @{ Name = 'M3 Memory + Observability'; Path = 'Guardian.M3.Tests.ps1' }
-    @{ Name = 'M4 Resource + Agent + Security'; Path = 'Guardian.M4.Tests.ps1' }
-    @{ Name = 'M5 Architecture Drift Detector'; Path = 'Guardian.M5.Tests.ps1' }
-    @{ Name = 'M6 Nexus98 Communication Layer'; Path = 'Guardian.M6.Tests.ps1' }
-    @{ Name = 'M7 Self-Development Guard + Drift Gate'; Path = 'Guardian.M7.Tests.ps1' }
-    @{ Name = 'M8 Governed Communication Loop'; Path = 'Guardian.M8.Tests.ps1' }
-    @{ Name = 'M9 Storage Entropy Remediation'; Path = 'Guardian.M9.Tests.ps1' }
-    @{ Name = 'M10 Continuous Operations'; Path = 'Guardian.M10.Tests.ps1' }
+    @{ Name = 'Foundation (M0)';       Path = 'Guardian.Foundation.Tests.ps1';      Tags = @('Unit') }
+    @{ Name = 'M2 Event + Storage Intelligence'; Path = 'Guardian.M2.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M3 Memory + Observability';   Path = 'Guardian.M3.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M4 Resource + Agent + Security'; Path = 'Guardian.M4.Tests.ps1';     Tags = @('Unit', 'Integration') }
+    @{ Name = 'M5 Controlled Remediation';   Path = 'Guardian.M5.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M6 Nexus98 Communication';    Path = 'Guardian.M6.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M7 Self-Development Guard';   Path = 'Guardian.M7.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M8 Governed Communication';   Path = 'Guardian.M8.Tests.ps1';       Tags = @('Unit', 'Integration') }
+    @{ Name = 'M9 Storage Entropy Remediation'; Path = 'Guardian.M9.Tests.ps1';     Tags = @('Unit', 'Integration') }
+    @{ Name = 'M10 Continuous Operations';   Path = 'Guardian.M10.Tests.ps1';      Tags = @('Unit', 'Integration') }
 )
+
+# Filter suites by mode
+if ($Mode -eq 'Unit') {
+    $testSuites = $testSuites | Where-Object { $_.Tags -contains 'Unit' }
+} elseif ($Mode -eq 'Integration') {
+    $testSuites = $testSuites | Where-Object { $_.Tags -contains 'Integration' }
+}
 
 $totalPassed = 0
 $totalFailed = 0
@@ -44,6 +69,7 @@ $results = @()
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host "Guardian Test Runner - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')" -ForegroundColor Cyan
 Write-Host "Root: $root" -ForegroundColor Cyan
+Write-Host "Mode: $Mode" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
 # Load Guardian foundation
@@ -68,13 +94,13 @@ foreach ($suite in $testSuites) {
     if ($TestFilter.Count -gt 0) { $pesterParams['Filter'] = $TestFilter -join ',' }
 
     try {
-            $result = Invoke-Pester @pesterParams -PassThru
-            $duration = (Get-Date) - $startTime
-            $totalTime += $duration.TotalSeconds
+        $result = Invoke-Pester @pesterParams -PassThru
+        $duration = (Get-Date) - $startTime
+        $totalTime += $duration.TotalSeconds
 
-            $passed = $result.PassedCount
-                    $failed = $result.FailedCount
-                    $skipped = $result.SkippedCount
+        $passed = $result.PassedCount
+        $failed = $result.FailedCount
+        $skipped = $result.SkippedCount
         $totalPassed += $passed
         $totalFailed += $failed
         $totalSkipped += $skipped

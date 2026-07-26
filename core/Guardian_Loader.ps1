@@ -29,7 +29,16 @@ $GuardianLoaderModules = @(
     'Guardian_StorageRules.ps1',
     'Guardian_Bridge.ps1',
     'Guardian_EntropyRemediation.ps1',
-    'Guardian_Operations.ps1'
+    'Guardian_Operations.ps1',
+    'Guardian_Secrets.ps1',
+    # Nexus98 Scribe Framework (external documentation & observability)
+    'Nexus98_Scribe_Core.ps1',
+    'Nexus98_Scribe_Roadmap.ps1',
+    'Nexus98_Scribe_TOC.ps1',
+    'Nexus98_Scribe_Status.ps1',
+    'Nexus98_Scribe_History.ps1',
+    'Nexus98_Scribe_Sync.ps1',
+    'Nexus98_Scribe.ps1'
 )
 function Import-Guardian {
     param([string]$Root)

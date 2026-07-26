@@ -2,8 +2,10 @@
 # Tests scheduler functionality, heartbeat, Nexus98 bus consumer, acknowledgement,
 # risk analysis, operational state, runtime config, and lifecycle management.
 
-. (Join-Path $PSScriptRoot '..\core\Guardian_Loader.ps1')
-Import-Guardian -Root (Resolve-Path (Join-Path $PSScriptRoot '..'))
+BeforeAll {
+    . (Join-Path $PSScriptRoot '..\core\Guardian_Loader.ps1')
+    Import-Guardian -Root (Resolve-Path (Join-Path $PSScriptRoot '..'))
+}
 
 Describe 'M10 Scheduler Engine' {
     BeforeEach {

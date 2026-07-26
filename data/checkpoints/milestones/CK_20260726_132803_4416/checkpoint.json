@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260726_132803_4416",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "guardian",
+    "created":  "2026-07-26T13:28:03.2077204-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "M10 Complete, M11 WQ-001 CI/CD Pipeline initiated",
+    "sizeBytes":  0
+}

@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260725_195954_7675",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "guardian",
+    "created":  "2026-07-25T19:59:54.1231185-05:00",
+    "fileCount":  0,
+    "tier":  "rolling",
+    "reason":  "test",
+    "sizeBytes":  0
+}

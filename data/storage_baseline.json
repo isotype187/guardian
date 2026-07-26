@@ -1,20 +1,20 @@
 ﻿{
-    "captured":  "2026-07-25T15:24:47.4459113-05:00",
+    "captured":  "2026-07-26T18:40:30.2939086-05:00",
     "stats":  {
                   "scripts":  {
                                   "mb":  0.1,
-                                  "files":  52
+                                  "files":  53
                               },
                   "reports":  {
                                   "mb":  0.12,
                                   "files":  46
                               },
                   "data":  {
-                               "mb":  0.25,
-                               "files":  184
+                               "mb":  0.92,
+                               "files":  583
                            },
                   "config":  {
-                                 "mb":  0.08,
+                                 "mb":  0.09,
                                  "files":  33
                              },
                   "snapshots":  {
@@ -22,15 +22,15 @@
                                     "files":  3411
                                 },
                   "tests":  {
-                                "mb":  0.06,
-                                "files":  11
+                                "mb":  0.07,
+                                "files":  18
                             },
                   "core":  {
-                               "mb":  0.16,
-                               "files":  27
+                               "mb":  0.25,
+                               "files":  35
                            },
                   "logs":  {
-                               "mb":  0.24,
+                               "mb":  0.85,
                                "files":  16
                            }
               }

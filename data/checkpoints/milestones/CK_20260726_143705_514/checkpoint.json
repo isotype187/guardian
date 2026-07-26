@@ -1,0 +1,12 @@
+﻿{
+    "validationStatus":  "validated",
+    "id":  "CK_20260726_143705_514",
+    "parent":  "",
+    "guardianVersion":  "0.1.0",
+    "creator":  "guardian",
+    "created":  "2026-07-26T14:37:05.0847541-05:00",
+    "fileCount":  0,
+    "tier":  "milestones",
+    "reason":  "WQ-002 Phase 1 Complete: Guardian_Secrets.ps1 implemented and integrated",
+    "sizeBytes":  0
+}

@@ -1,0 +1,22 @@
+﻿{
+    "message_id":  "MSG_20260726_132119_953072",
+    "correlation_id":  "COR_20260726_132119_713546",
+    "timestamp":  "2026-07-26T13:21:19.4561151-05:00",
+    "sender":  "Guardian",
+    "receiver":  "Nexus98",
+    "message_type":  "SYSTEM_HEALTH_REPORT",
+    "risk_level":  "low",
+    "permission_required":  false,
+    "authorization_status":  "NONE",
+    "checkpoint_reference":  "",
+    "content":  {
+
+                },
+    "metadata":  {
+
+                 },
+    "status":  "ACCEPTED",
+    "attempt_count":  0,
+    "created_time":  "2026-07-26T13:21:19.4561151-05:00",
+    "updated_time":  "2026-07-26T13:21:19.5018259-05:00"
+}

@@ -1,0 +1,42 @@
+name: 'Guardian Setup'
+description: 'Setup Guardian environment with module loading and initialization'
+author: 'Guardian Engineering Team'
+inputs:
+  guardian-root:
+    description: 'Path to Guardian root directory'
+    required: true
+    default: 'Nexus98_Guardian'
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup PowerShell
+      uses: actions/setup-powershell@v1
+      with:
+        version: '7.4'
+
+    - name: Install Pester
+      shell: pwsh
+      run: |
+        Install-Module -Name Pester -Force -MinimumVersion 6.0.0 -Scope CurrentUser
+        Import-Module Pester
+
+    - name: Install PSScriptAnalyzer
+      shell: pwsh
+      run: |
+        Install-Module -Name PSScriptAnalyzer -Force -Scope CurrentUser
+
+    - name: Load Guardian Modules
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        . .\core\Guardian_Loader.ps1
+        Import-Guardian -Root (Resolve-Path .)
+        Write-Host "Guardian initialized at $(Get-Date)" -ForegroundColor Green
+
+    - name: Verify Guardian Health
+      shell: pwsh
+      working-directory: ${{ inputs.guardian-root }}
+      run: |
+        $health = Get-GuardianHealthScore
+        Write-Host "Guardian Health: $($health.overallPct)%"
+        Write-Host "Architecture: $($health.architecturePct)% | Storage: $($health.storagePct)% | Runtime: $($health.runtimePct)%"
